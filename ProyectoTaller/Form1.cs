@@ -43,5 +43,14 @@ namespace ProyectoTaller
                 }
             }
         }
+
+        private void mostrarAgregarClientes(object sender, EventArgs e)
+        {
+            // Crear instancia del form de clientes
+            FormPrincipalClientes formClientes = new FormPrincipalClientes();
+
+            // Mostrarlo
+            formClientes.Show();
+        }
     }
 }
