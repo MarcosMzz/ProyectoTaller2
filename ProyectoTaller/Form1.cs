@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration; // Para leer el connection string desde app.config
+using System.Configuration;
 
 namespace ProyectoTaller
 {
@@ -52,5 +57,25 @@ namespace ProyectoTaller
             // Mostrarlo
             formClientes.Show();
         }
+
+        private void cargarDatosPrueba(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarPerfiles()
+        {
+            string connStr = @"Server=localhost\SQLEXPRESS;Database=Concesionaria;Trusted_Connection=True";
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Perfiles", conn);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
+
+
     }
 }
