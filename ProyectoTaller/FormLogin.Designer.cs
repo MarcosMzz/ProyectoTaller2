@@ -46,6 +46,7 @@
             // 
             this.TBPass.Location = new System.Drawing.Point(86, 192);
             this.TBPass.Name = "TBPass";
+            this.TBPass.PasswordChar = '*';
             this.TBPass.Size = new System.Drawing.Size(139, 20);
             this.TBPass.TabIndex = 1;
             // 
@@ -90,6 +91,7 @@
             this.Controls.Add(this.TBPass);
             this.Controls.Add(this.TBCorreo);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

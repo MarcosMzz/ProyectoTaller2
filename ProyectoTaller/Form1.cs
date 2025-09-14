@@ -9,10 +9,8 @@ using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
 using System.Configuration; // Para leer el connection string desde app.config
-using System.Configuration;
+
 
 namespace ProyectoTaller
 {

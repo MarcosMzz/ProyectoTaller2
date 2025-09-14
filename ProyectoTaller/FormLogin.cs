@@ -52,26 +52,34 @@ namespace ProyectoTaller
                     conn.Open();
 
                     // Consulta SQL segura con parámetros
-                    string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email AND Pass = @Pass";
+                    string query = "SELECT u.ID_Usuario, u.Nombre, u.Apellido, u.Email, p.Descripcion FROM Usuarios u INNER JOIN Perfiles p ON u.ID_Perfiles = p.ID_Perfiles WHERE u.Email = @Email AND u.Pass = @Pass;";
+
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Pass", pass);
 
-                        int resultado = (int)cmd.ExecuteScalar();
-
-                        if (resultado > 0)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            MessageBox.Show("Login exitoso", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Abrir FormPrincipal o siguiente paso
-                        }
-                        else
-                        {
-                            MessageBox.Show("Email o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (reader.Read()) // si encontró un usuario
+                            {
+                                Sesion.UsuarioId = reader.GetInt32(0);   // columna 1 → ID_Usuario
+                                Sesion.Nombre = reader.GetString(1); // columna 2 → Nombre
+                                Sesion.Apellido = reader.GetString(2); // columna 3 → Apellido
+                                Sesion.Email = reader.GetString(3); // columna 4 → Email
+                                Sesion.Rol = reader.GetString(4);  // columna 5 → ID_Perfiles
+                                MessageBox.Show("Inicio de sesion exitoso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Credenciales inválidas");
+                            }
                         }
                     }
+
                 }
+            
             }
             catch (Exception ex)
             {

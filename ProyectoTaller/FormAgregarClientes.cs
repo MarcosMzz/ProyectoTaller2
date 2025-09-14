@@ -79,7 +79,7 @@ namespace ProyectoTaller
                 string direccion = TBDireccion.Text;
                 DateTime fechaDeNacimiento = DateTime.Now;
 
-                formPrincipal.agregarFilaCleinte(nombre, apellido, dni, email, nroDeTelefono, direccion, fechaDeNacimiento);
+                
             }
             
 

@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace ProyectoTaller
 {
     public partial class FormPrincipalClientes : Form
     {
-        private int ultimoID = 0;
+
         public FormPrincipalClientes()
         {
             InitializeComponent();
+            CargarClientes();
         }
 
         private void AbrirFormularioAgregarClientes(object sender, EventArgs e)
@@ -24,69 +27,56 @@ namespace ProyectoTaller
             formAgregar.Show(); //
         }
 
-        public void agregarFilaCleinte(string nombre, string apellido, int dni, string email, string telefono, string direccion, DateTime fechaDeNacimiento)
+        private void CargarClientes()
         {
-            int id = ultimoID; // ID como int
-            string activo = "SI";
-            string fecha = fechaDeNacimiento.ToShortDateString();
+            string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True";
 
-            DGVClientes.Rows.Add(id, nombre, apellido, dni, email, telefono, direccion, fecha, activo);
-
-            ultimoID++;
-        }
-
-        private void bajaCliente(object sender, EventArgs e)
-        {
-            if (DGVClientes.SelectedRows.Count > 0)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                foreach (DataGridViewRow fila in DGVClientes.SelectedRows)
+                try
                 {
-                    // Cambiamos el valor de la columna "Activo" a "NO"
-                    fila.Cells["ActivoColumna"].Value = "NO";
+                    conn.Open();
 
-                    // Pintamos la fila de rojo
-                    fila.DefaultCellStyle.BackColor = Color.Red;
+                    string query = "SELECT ID_Cliente, Nombre, Apellido, DNI, Email, Telefono, Direccion, FechaNacimiento, Baja FROM Cliente";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Crear nueva columna de texto para mostrar Estado
+                    dt.Columns.Add("Estado", typeof(string));
+
+                    // Llenar columna Estado según Baja
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        row["Estado"] = ((bool)row["Baja"]) ? "Activo" : "Inactivo";
+                    }
+
+                    // Configuración del DataGrid
+                    DGClientes.AutoGenerateColumns = false;
+                    DGClientes.AllowUserToAddRows = false; // quitar fila vacía
+                    DGClientes.Columns.Clear();
+
+                    // Definir columnas
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "ID", DataPropertyName = "ID_Cliente" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Nombre", DataPropertyName = "Nombre" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Apellido", DataPropertyName = "Apellido" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "DNI", DataPropertyName = "DNI" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Email", DataPropertyName = "Email" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Teléfono", DataPropertyName = "Telefono" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Dirección", DataPropertyName = "Direccion" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Fecha Nac.", DataPropertyName = "FechaNacimiento" });
+                    DGClientes.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Estado", DataPropertyName = "Estado" });
+
+                    // Asignar datos al DataGrid
+                    DGClientes.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar clientes: " + ex.Message);
                 }
             }
-            else
-            {
-                MessageBox.Show("Selecciona un usuario primero.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
-
-        private void activarCliente(object sender, EventArgs e)
-        {
-            if (DGVClientes.SelectedRows.Count > 0)
-            {
-                foreach (DataGridViewRow fila in DGVClientes.SelectedRows)
-                {
-                    // Cambiamos el valor de la columna "Activo" a "NO"
-                    fila.Cells["ActivoColumna"].Value = "SI";
-
-                    // Pintamos la fila de rojo
-                    fila.DefaultCellStyle.BackColor = Color.White;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un usuario primero.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void modificarCliente(object sender, EventArgs e)
-        {
-            if (DGVClientes.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("Selecciona un cliente para modificar");
-                return;
-            }
-
-            // Obtenemos la fila seleccionada
-            DataGridViewRow filaSeleccionada = DGVClientes.SelectedRows[0];
-
-            // Abrimos el form de agregar cliente pasando la fila
-            FormAgregarClientes formModificar = new FormAgregarClientes(filaSeleccionada);
-            formModificar.Show();
-        }
+        
     }
 }
