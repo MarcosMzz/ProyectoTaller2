@@ -31,8 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MSClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MSVehiculos = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,39 +42,39 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MSClientes,
             this.MSVehiculos,
-            this.ventasToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 657);
+            this.MSVentas,
+            this.MSUsuarios});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 656);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // MSClientes
             // 
             this.MSClientes.Name = "MSClientes";
-            this.MSClientes.Size = new System.Drawing.Size(61, 20);
+            this.MSClientes.Size = new System.Drawing.Size(65, 21);
             this.MSClientes.Text = "Clientes";
             this.MSClientes.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // MSVehiculos
             // 
             this.MSVehiculos.Name = "MSVehiculos";
-            this.MSVehiculos.Size = new System.Drawing.Size(69, 20);
+            this.MSVehiculos.Size = new System.Drawing.Size(74, 21);
             this.MSVehiculos.Text = "Vehiculos";
             this.MSVehiculos.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
-            // ventasToolStripMenuItem
+            // MSVentas
             // 
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.MSVentas.Name = "MSVentas";
+            this.MSVentas.Size = new System.Drawing.Size(58, 21);
+            this.MSVentas.Text = "Ventas";
             // 
-            // usuariosToolStripMenuItem
+            // MSUsuarios
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.MSUsuarios.Name = "MSUsuarios";
+            this.MSUsuarios.Size = new System.Drawing.Size(71, 21);
+            this.MSUsuarios.Text = "Usuarios";
             // 
             // FormPrincipal
             // 
@@ -100,7 +100,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MSClientes;
         private System.Windows.Forms.ToolStripMenuItem MSVehiculos;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MSVentas;
+        private System.Windows.Forms.ToolStripMenuItem MSUsuarios;
     }
 }
