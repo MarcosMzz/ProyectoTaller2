@@ -75,8 +75,10 @@
             // 
             // DGClientes
             // 
+            this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGClientes.Location = new System.Drawing.Point(0, 99);
+            this.DGClientes.MaximumSize = new System.Drawing.Size(948, 571);
             this.DGClientes.Name = "DGClientes";
             this.DGClientes.Size = new System.Drawing.Size(948, 571);
             this.DGClientes.TabIndex = 5;
@@ -85,14 +87,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 666);
+            this.ClientSize = new System.Drawing.Size(944, 661);
             this.Controls.Add(this.DGClientes);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormPrincipalClientes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.DGClientes)).EndInit();
             this.ResumeLayout(false);
