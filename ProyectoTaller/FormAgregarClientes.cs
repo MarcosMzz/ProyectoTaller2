@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,23 +15,10 @@ namespace ProyectoTaller
     {
 
         private DataGridViewRow filaOriginal;
-        public FormAgregarClientes(DataGridViewRow fila = null)
+        public FormAgregarClientes()
         {
             InitializeComponent();
 
-            filaOriginal = fila;
-
-            if (filaOriginal != null)
-            {
-                // Rellenamos los TextBox con los datos existentes
-                TBNombre.Text = filaOriginal.Cells["NombreColumna"].Value.ToString();
-                TBApellido.Text = filaOriginal.Cells["ApellidoColumna"].Value.ToString();
-                TBDni.Text = filaOriginal.Cells["DniColumna"].Value.ToString();
-                TBNroTelefono.Text = filaOriginal.Cells["TelefonoColumna"].Value.ToString();
-                TBEmail.Text = filaOriginal.Cells["EmailColumna"].Value.ToString();
-                TBDireccion.Text = filaOriginal.Cells["DireccionColumna"].Value.ToString();
-                DTCliente.Value = DateTime.Parse(filaOriginal.Cells["FechaDeNacimientoColumna"].Value.ToString());
-            }
         }
 
         private FormPrincipalClientes formPrincipal; // referencia al form principal
@@ -59,29 +47,45 @@ namespace ProyectoTaller
                 return;
             }
 
-            if (filaOriginal != null)
-            {
-                filaOriginal.Cells["NombreColumna"].Value = TBNombre.Text;
-                filaOriginal.Cells["ApellidoColumna"].Value = TBApellido.Text;
-                filaOriginal.Cells["DNIColumna"].Value = TBDni.Text;
-                filaOriginal.Cells["TelefonoColumna"].Value = TBNroTelefono.Text;
-                filaOriginal.Cells["EmailColumna"].Value = TBEmail.Text;
-                filaOriginal.Cells["DireccionColumna"].Value = TBDireccion.Text;
-                filaOriginal.Cells["FechaDeNacimientoColumna"].Value = DTCliente.Value.ToShortDateString();
-            }
-            else
-            {
-                string nombre = TBNombre.Text;
-                string apellido = TBApellido.Text;
-                string nroDeTelefono = TBNroTelefono.Text;
-                int dni = int.Parse(TBDni.Text);
-                string email = TBEmail.Text;
-                string direccion = TBDireccion.Text;
-                DateTime fechaDeNacimiento = DateTime.Now;
+            string Nombre = TBNombre.Text;
+            string Apellido = TBApellido.Text;
+            string nroDeTelefono = TBNroTelefono.Text;
+            int DNI = int.Parse(TBDni.Text);
+            string Email = TBEmail.Text;
+            string Direccion = TBDireccion.Text;
+            DateTime FechaDeNacimiento = DTCliente.Value;
 
-                
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+                {
+                    conn.Open();
+
+                    string query = @"INSERT INTO Cliente(Nombre, Apellido, Email, Telefono, Direccion, FechaNacimiento, DNI) 
+                                    VALUES (@Nombre, @Apellido, @Email, @nroDeTelefono, @Direccion, @FechaDeNacimiento, @DNI)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", Nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", Apellido);
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        cmd.Parameters.AddWithValue("@FechaDeNacimiento", FechaDeNacimiento);
+                        cmd.Parameters.AddWithValue("@DNI", DNI);
+                        cmd.Parameters.AddWithValue("@Direccion", Direccion);
+                        cmd.Parameters.AddWithValue("@nroDeTelefono", nroDeTelefono);
+
+                        cmd.ExecuteNonQuery();
+
+                        formPrincipal.CargarClientes(); // refresca la grilla automáticamente
+                    }
+                }
+
+                MessageBox.Show("Usuario agregado correctamente.");
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar usuario: " + ex.Message);
+            }
 
             this.Close();
 

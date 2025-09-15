@@ -23,11 +23,11 @@ namespace ProyectoTaller
 
         private void AbrirFormularioAgregarClientes(object sender, EventArgs e)
         {
-            FormAgregarClientes formAgregar = new FormAgregarClientes(this); // this = form principal
-            formAgregar.Show(); //
+            FormAgregarClientes formAgregar = new FormAgregarClientes(this); // le pasamos la instancia
+            formAgregar.Show();
         }
 
-        private void CargarClientes()
+        public void CargarClientes()
         {
             string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True";
 
