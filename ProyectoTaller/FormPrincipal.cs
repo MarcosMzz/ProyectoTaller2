@@ -19,7 +19,19 @@ namespace ProyectoTaller
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            this.Text = $"Bienvenido {Sesion.Nombre} {Sesion.Apellido} - Rol: {Sesion.Rol}";
 
+            if (Sesion.Rol == "Administrador")
+            {
+                MSClientes.Enabled = true;
+                MSVehiculos.Enabled = true;
+            }
+            else if (Sesion.Rol == "Vendedor")
+            {
+                MSClientes.Enabled = true;
+                MSVehiculos.Enabled = false;
+            }
+            
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)

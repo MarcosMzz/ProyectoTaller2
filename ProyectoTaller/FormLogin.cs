@@ -69,7 +69,13 @@ namespace ProyectoTaller
                                 Sesion.Apellido = reader.GetString(2); // columna 3 → Apellido
                                 Sesion.Email = reader.GetString(3); // columna 4 → Email
                                 Sesion.Rol = reader.GetString(4);  // columna 5 → ID_Perfiles
+
                                 MessageBox.Show("Inicio de sesion exitoso");
+
+                                FormPrincipal formPrincipal = new FormPrincipal();
+                                this.Hide(); // oculta el login
+                                formPrincipal.ShowDialog(); // abre el menú principal
+                                this.Close(); // cierra el login cuando cierres el principal
                             }
                             else
                             {

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSVehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -40,40 +40,40 @@
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem,
-            this.vehiculosToolStripMenuItem,
+            this.MSClientes,
+            this.MSVehiculos,
             this.ventasToolStripMenuItem,
             this.usuariosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 656);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 657);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // clientesToolStripMenuItem
+            // MSClientes
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(65, 21);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            this.MSClientes.Name = "MSClientes";
+            this.MSClientes.Size = new System.Drawing.Size(61, 20);
+            this.MSClientes.Text = "Clientes";
+            this.MSClientes.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
-            // vehiculosToolStripMenuItem
+            // MSVehiculos
             // 
-            this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
-            this.vehiculosToolStripMenuItem.Text = "Vehiculos";
-            this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
+            this.MSVehiculos.Name = "MSVehiculos";
+            this.MSVehiculos.Size = new System.Drawing.Size(69, 20);
+            this.MSVehiculos.Text = "Vehiculos";
+            this.MSVehiculos.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // FormPrincipal
@@ -98,8 +98,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MSClientes;
+        private System.Windows.Forms.ToolStripMenuItem MSVehiculos;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
     }
