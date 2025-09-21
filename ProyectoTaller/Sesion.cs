@@ -13,5 +13,7 @@ namespace ProyectoTaller
         public static string Apellido { get; set; }
         public static string Email { get; set; }
         public static string Rol { get; set; } // o ID_Perfiles
+
+        public static bool LoginExitoso { get; set; } = false;
     }
 }

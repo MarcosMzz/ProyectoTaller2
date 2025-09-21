@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormPrincipalVentasVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalVentasVendedor.Designer.cs">
+      <DependentUpon>FormPrincipalVentasVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipalVentasSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalVentasSupervisor.Designer.cs">
+      <DependentUpon>FormPrincipalVentasSupervisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalUsuarios.resx">
       <DependentUpon>FormPrincipalUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipalVentasSupervisor.resx">
+      <DependentUpon>FormPrincipalVentasSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipalVentasVendedor.resx">
+      <DependentUpon>FormPrincipalVentasVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

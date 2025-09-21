@@ -36,11 +36,11 @@
             this.CBTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DTFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.TBNombre = new System.Windows.Forms.TextBox();
             this.TBApellido = new System.Windows.Forms.TextBox();
             this.TBEmail = new System.Windows.Forms.TextBox();
             this.TBPass = new System.Windows.Forms.TextBox();
-            this.DTFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.BTAgregarUsuario = new System.Windows.Forms.Button();
             this.BTCerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -129,6 +129,14 @@
             this.panel1.Size = new System.Drawing.Size(407, 354);
             this.panel1.TabIndex = 7;
             // 
+            // DTFechaNacimiento
+            // 
+            this.DTFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaNacimiento.Location = new System.Drawing.Point(208, 315);
+            this.DTFechaNacimiento.Name = "DTFechaNacimiento";
+            this.DTFechaNacimiento.Size = new System.Drawing.Size(182, 29);
+            this.DTFechaNacimiento.TabIndex = 12;
+            // 
             // TBNombre
             // 
             this.TBNombre.Location = new System.Drawing.Point(208, 15);
@@ -158,14 +166,6 @@
             this.TBPass.Name = "TBPass";
             this.TBPass.Size = new System.Drawing.Size(182, 29);
             this.TBPass.TabIndex = 11;
-            // 
-            // DTFechaNacimiento
-            // 
-            this.DTFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaNacimiento.Location = new System.Drawing.Point(208, 315);
-            this.DTFechaNacimiento.Name = "DTFechaNacimiento";
-            this.DTFechaNacimiento.Size = new System.Drawing.Size(182, 29);
-            this.DTFechaNacimiento.TabIndex = 12;
             // 
             // BTAgregarUsuario
             // 
@@ -197,7 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormAgregarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Agregar Usuarios";
             this.Load += new System.EventHandler(this.cargarTiposDePerfiles);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

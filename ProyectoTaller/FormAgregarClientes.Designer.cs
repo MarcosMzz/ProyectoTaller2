@@ -41,10 +41,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.BTNAgregarC = new System.Windows.Forms.Button();
             this.BTLimpiar = new System.Windows.Forms.Button();
             this.DTCliente = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -164,6 +164,15 @@
             this.panel1.Size = new System.Drawing.Size(196, 318);
             this.panel1.TabIndex = 12;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 288);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 19);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Fecha de Nacimiento";
+            // 
             // BTNAgregarC
             // 
             this.BTNAgregarC.Location = new System.Drawing.Point(29, 384);
@@ -192,15 +201,6 @@
             this.DTCliente.Size = new System.Drawing.Size(113, 20);
             this.DTCliente.TabIndex = 15;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 288);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 19);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Fecha de Nacimiento";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(342, 384);
@@ -228,7 +228,7 @@
             this.Controls.Add(this.TBApellido);
             this.Controls.Add(this.TBNombre);
             this.Name = "FormAgregarClientes";
-            this.Text = "te";
+            this.Text = "Agregar Clientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

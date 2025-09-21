@@ -16,7 +16,7 @@ namespace ProyectoTaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipalUsuarios());
+            Application.Run(new FormLogin());
         }
     }
 }
