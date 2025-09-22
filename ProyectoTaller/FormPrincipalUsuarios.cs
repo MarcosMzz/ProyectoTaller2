@@ -62,6 +62,12 @@ namespace ProyectoTaller
             FormAgregarUsuario formAgregar = new FormAgregarUsuario(this);
             formAgregar.ShowDialog(); // lo mostramos modal
         }
+
+        private void abrirFormModificarUsuarios(object sender, EventArgs e)
+        {
+            FormModificarUsuario formModificar = new FormModificarUsuario();
+            formModificar.ShowDialog(); // lo mostramos modal
+        }
     }
 
 
