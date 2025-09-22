@@ -81,13 +81,31 @@ namespace ProyectoTaller
                 }
 
                 MessageBox.Show("Clientes agregado correctamente.");
+                this.Close();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601) // violación de PK o UNIQUE
+                {
+                    if (ex.Message.Contains("PK_Cliente"))
+                        MessageBox.Show("Ya existe un cliente con ese identificador (PK).");
+                    else if (ex.Message.Contains("UQ_DNI"))
+                        MessageBox.Show("Ya existe un cliente registrado con ese DNI.");
+                    else if (ex.Message.Contains("UQ_Email_Cliente"))
+                        MessageBox.Show("Ya existe un cliente registrado con ese Email.");
+                    else
+                        MessageBox.Show("Error: ya existe un cliente con datos duplicados.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar cliente: " + ex.Message);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar cliente: " + ex.Message);
+                MessageBox.Show("Error inesperado: " + ex.Message);
             }
 
-            this.Close();
 
         }
 
