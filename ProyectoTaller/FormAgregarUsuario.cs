@@ -86,13 +86,29 @@ namespace ProyectoTaller
                 
                 MessageBox.Show("Usuario agregado correctamente.");
                 formPadre.CargarUsuarios();
+                this.Close();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601) // violación de PK o UNIQUE
+                {
+                    if (ex.Message.Contains("PK_Cliente"))
+                        MessageBox.Show("Ya existe un Usuario con ese identificador (PK).");
+                    else if (ex.Message.Contains("UQ_Email"))
+                        MessageBox.Show("Ya existe un Usuario registrado con ese Email.");
+                    else
+                        MessageBox.Show("Error: ya existe un Usuario con datos duplicados.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar Usuario: " + ex.Message);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar usuario: " + ex.Message);
+                MessageBox.Show("Error inesperado: " + ex.Message);
             }
 
-            this.Close();
         }
 
         private void cerrarForn(object sender, EventArgs e)
