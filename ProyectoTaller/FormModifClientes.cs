@@ -11,23 +11,18 @@ using System.Windows.Forms;
 
 namespace ProyectoTaller
 {
-    public partial class FormAgregarClientes : Form
+    public partial class FormModifClientes : Form
     {
-
+        private int id_editar;
         private DataGridViewRow filaOriginal;
-        public FormAgregarClientes()
-        {
-            InitializeComponent();
-
-        }
 
         private FormPrincipalClientes formPrincipal; // referencia al form principal
 
-
-        public FormAgregarClientes(FormPrincipalClientes form)
+        public FormModifClientes(FormPrincipalClientes form, int id)
         {
             InitializeComponent();
-            formPrincipal = form; // guardamos la referencia
+            formPrincipal = form;
+            this.id_editar = id;
         }
 
         private void limpiarCampos(object sender, EventArgs e)
@@ -41,7 +36,7 @@ namespace ProyectoTaller
 
         private void agregarCliente(object sender, EventArgs e)
         {
-            if (CamposVacios(TBNombre, TBApellido, TBNroTelefono, TBDni, TBEmail, TBDireccion))
+            if (CamposVacios(TBNombre, TBApellido, TBNroTelefono, TBEmail, TBDireccion))
             {
                 MessageBox.Show("Rellena todos los campos para continuar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -49,11 +44,10 @@ namespace ProyectoTaller
 
             string Nombre = TBNombre.Text;
             string Apellido = TBApellido.Text;
-            string nroDeTelefono = TBNroTelefono.Text;
-            int DNI = int.Parse(TBDni.Text);
+            string Telefono = TBNroTelefono.Text;
             string Email = TBEmail.Text;
             string Direccion = TBDireccion.Text;
-            DateTime FechaDeNacimiento = DTCliente.Value;
+
 
             try
             {
@@ -61,18 +55,22 @@ namespace ProyectoTaller
                 {
                     conn.Open();
 
-                    string query = @"INSERT INTO Cliente(Nombre, Apellido, Email, Telefono, Direccion, FechaNacimiento, DNI) 
-                                    VALUES (@Nombre, @Apellido, @Email, @nroDeTelefono, @Direccion, @FechaDeNacimiento, @DNI)";
+                    string query = @"UPDATE Cliente 
+                                      SET Nombre = @Nombre, 
+                                          Apellido = @Apellido,     
+                                          Email = @Email,   
+                                          Telefono = @Telefono, 
+                                          Direccion = @Direccion    
+                                      WHERE ID_Cliente = @Id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Nombre", Nombre);
                         cmd.Parameters.AddWithValue("@Apellido", Apellido);
                         cmd.Parameters.AddWithValue("@Email", Email);
-                        cmd.Parameters.AddWithValue("@FechaDeNacimiento", FechaDeNacimiento);
-                        cmd.Parameters.AddWithValue("@DNI", DNI);
                         cmd.Parameters.AddWithValue("@Direccion", Direccion);
-                        cmd.Parameters.AddWithValue("@nroDeTelefono", nroDeTelefono);
+                        cmd.Parameters.AddWithValue("@Telefono", Telefono);
+                        cmd.Parameters.AddWithValue("@Id", this.id_editar);
 
                         cmd.ExecuteNonQuery();
 
@@ -80,11 +78,11 @@ namespace ProyectoTaller
                     }
                 }
 
-                MessageBox.Show("Clientes agregado correctamente.");
+                MessageBox.Show("Cliente modificado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar cliente: " + ex.Message);
+                MessageBox.Show("Error al modificar cliente: " + ex.Message);
             }
 
             this.Close();
@@ -113,15 +111,45 @@ namespace ProyectoTaller
             {
                 if (string.IsNullOrWhiteSpace(tb.Text))
                 {
-                    return true; 
+                    return true;
                 }
             }
-            return false; 
+            return false;
         }
 
         private void cerrarVentana(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormModifClientes_Load(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+                {
+                conn.Open();
+
+                string query = "SELECT Nombre, Apellido, Email, Telefono, Direccion FROM Cliente WHERE ID_Cliente = @Id";
+                
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", this.id_editar);
+                    
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        TBNombre.Text = reader["Nombre"].ToString();
+                        TBApellido.Text = reader["Apellido"].ToString();
+                        TBEmail.Text = reader["Email"].ToString();
+                        TBNroTelefono.Text = reader["Telefono"].ToString();
+                        TBDireccion.Text = reader["Direccion"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente no encontrado.");
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

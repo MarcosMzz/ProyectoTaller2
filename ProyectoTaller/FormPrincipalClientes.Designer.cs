@@ -54,6 +54,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Dar de Baja Cliente";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.DarDeBajaClientes);
             // 
             // button3
             // 
@@ -63,6 +64,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Modificar Cliente";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AbrirFormularioModifClientes);
             // 
             // button4
             // 
@@ -72,6 +74,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Activar Cliente";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.DarDeAltaClientes);
             // 
             // DGClientes
             // 

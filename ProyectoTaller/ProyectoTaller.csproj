@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModifClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifClientes.Designer.cs">
+      <DependentUpon>FormModifClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipalVentasVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifClientes.resx">
+      <DependentUpon>FormModifClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
