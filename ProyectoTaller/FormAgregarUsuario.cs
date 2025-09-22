@@ -92,7 +92,7 @@ namespace ProyectoTaller
             {
                 if (ex.Number == 2627 || ex.Number == 2601) // violación de PK o UNIQUE
                 {
-                    if (ex.Message.Contains("PK_Cliente"))
+                    if (ex.Message.Contains("PK_Usuarios"))
                         MessageBox.Show("Ya existe un Usuario con ese identificador (PK).");
                     else if (ex.Message.Contains("UQ_Email"))
                         MessageBox.Show("Ya existe un Usuario registrado con ese Email.");
