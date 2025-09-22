@@ -28,47 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVentasVendedor = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVentasVendedor)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DGVentasVendedor
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 134);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(943, 529);
-            this.dataGridView1.TabIndex = 0;
+            this.DGVentasVendedor.AllowUserToDeleteRows = false;
+            this.DGVentasVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVentasVendedor.Location = new System.Drawing.Point(1, 165);
+            this.DGVentasVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVentasVendedor.Name = "DGVentasVendedor";
+            this.DGVentasVendedor.ReadOnly = true;
+            this.DGVentasVendedor.RowHeadersWidth = 51;
+            this.DGVentasVendedor.Size = new System.Drawing.Size(1257, 651);
+            this.DGVentasVendedor.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 78);
+            this.button1.Size = new System.Drawing.Size(164, 96);
             this.button1.TabIndex = 1;
             this.button1.Text = "Agregar Ventas";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // FormPrincipalVentasVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 661);
+            this.ClientSize = new System.Drawing.Size(1259, 814);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVentasVendedor);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrincipalVentasVendedor";
             this.Text = "Ventas Vendedor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.cargarVentasVendedor);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVentasVendedor)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVentasVendedor;
         private System.Windows.Forms.Button button1;
     }
 }
