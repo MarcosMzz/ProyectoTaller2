@@ -62,7 +62,7 @@ namespace ProyectoTaller
 
         private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            abrirForm(new Form1());
+            abrirForm(new FormPrincipalAutos());
         }
 
         private void abrirForm(Form childForm)

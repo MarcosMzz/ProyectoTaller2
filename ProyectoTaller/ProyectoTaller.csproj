@@ -89,17 +89,17 @@
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Sesion.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormPrincipalAutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormPrincipalAutos.Designer.cs">
+      <DependentUpon>FormPrincipalAutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FormAgregarAutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FormAgregarAutos.Designer.cs">
+      <DependentUpon>FormAgregarAutos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -121,11 +121,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormPrincipalAutos.resx">
+      <DependentUpon>FormPrincipalAutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FormAgregarAutos.resx">
+      <DependentUpon>FormAgregarAutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarClientes.resx">
       <DependentUpon>FormAgregarClientes.cs</DependentUpon>
