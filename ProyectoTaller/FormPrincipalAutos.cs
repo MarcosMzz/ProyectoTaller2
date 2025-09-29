@@ -57,7 +57,7 @@ namespace ProyectoTaller
         }
 
 
-        public void CargarAutos()
+        public void CargarAutos(string where = "")
         {
             try
             {
@@ -72,7 +72,12 @@ namespace ProyectoTaller
                                 CASE WHEN Estado = 1 THEN 'Activo' ELSE 'Desactivado' END AS Estado,
                                 Precio,
                                 Modelo
-                             FROM Vehiculos;";
+                             FROM Vehiculos";
+
+                    if (!string.IsNullOrEmpty(where))
+                    {
+                        query += " WHERE " + where;
+                    }
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
@@ -89,6 +94,7 @@ namespace ProyectoTaller
                 MessageBox.Show("Error al cargar autos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void cargarAutos(object sender, EventArgs e)
         {
