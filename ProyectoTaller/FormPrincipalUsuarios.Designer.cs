@@ -41,20 +41,18 @@
             // 
             this.DGUusarios.AllowUserToDeleteRows = false;
             this.DGUusarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGUusarios.Location = new System.Drawing.Point(120, 118);
-            this.DGUusarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGUusarios.Location = new System.Drawing.Point(90, 96);
             this.DGUusarios.Name = "DGUusarios";
             this.DGUusarios.ReadOnly = true;
             this.DGUusarios.RowHeadersWidth = 51;
-            this.DGUusarios.Size = new System.Drawing.Size(1005, 681);
+            this.DGUusarios.Size = new System.Drawing.Size(754, 553);
             this.DGUusarios.TabIndex = 0;
             // 
             // BTNUsuarioAgregar
             // 
-            this.BTNUsuarioAgregar.Location = new System.Drawing.Point(280, 38);
-            this.BTNUsuarioAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNUsuarioAgregar.Location = new System.Drawing.Point(210, 31);
             this.BTNUsuarioAgregar.Name = "BTNUsuarioAgregar";
-            this.BTNUsuarioAgregar.Size = new System.Drawing.Size(132, 75);
+            this.BTNUsuarioAgregar.Size = new System.Drawing.Size(99, 61);
             this.BTNUsuarioAgregar.TabIndex = 1;
             this.BTNUsuarioAgregar.Text = "Agregar Usuario";
             this.BTNUsuarioAgregar.UseVisualStyleBackColor = true;
@@ -62,10 +60,9 @@
             // 
             // BTNUsuarioModificar
             // 
-            this.BTNUsuarioModificar.Location = new System.Drawing.Point(456, 38);
-            this.BTNUsuarioModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNUsuarioModificar.Location = new System.Drawing.Point(342, 31);
             this.BTNUsuarioModificar.Name = "BTNUsuarioModificar";
-            this.BTNUsuarioModificar.Size = new System.Drawing.Size(132, 75);
+            this.BTNUsuarioModificar.Size = new System.Drawing.Size(99, 61);
             this.BTNUsuarioModificar.TabIndex = 2;
             this.BTNUsuarioModificar.Text = "Modificar Usuario";
             this.BTNUsuarioModificar.UseVisualStyleBackColor = true;
@@ -73,35 +70,34 @@
             // 
             // BTNUsuarioBaja
             // 
-            this.BTNUsuarioBaja.Location = new System.Drawing.Point(637, 38);
-            this.BTNUsuarioBaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNUsuarioBaja.Location = new System.Drawing.Point(478, 31);
             this.BTNUsuarioBaja.Name = "BTNUsuarioBaja";
-            this.BTNUsuarioBaja.Size = new System.Drawing.Size(132, 75);
+            this.BTNUsuarioBaja.Size = new System.Drawing.Size(99, 61);
             this.BTNUsuarioBaja.TabIndex = 3;
             this.BTNUsuarioBaja.Text = "Dar de Baja Usuario";
             this.BTNUsuarioBaja.UseVisualStyleBackColor = true;
+            this.BTNUsuarioBaja.Click += new System.EventHandler(this.DarDeBajaUsuarios);
             // 
             // BTNUsuarioActivar
             // 
-            this.BTNUsuarioActivar.Location = new System.Drawing.Point(803, 38);
-            this.BTNUsuarioActivar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNUsuarioActivar.Location = new System.Drawing.Point(602, 31);
             this.BTNUsuarioActivar.Name = "BTNUsuarioActivar";
-            this.BTNUsuarioActivar.Size = new System.Drawing.Size(132, 75);
+            this.BTNUsuarioActivar.Size = new System.Drawing.Size(99, 61);
             this.BTNUsuarioActivar.TabIndex = 4;
             this.BTNUsuarioActivar.Text = "Activar Usuario";
             this.BTNUsuarioActivar.UseVisualStyleBackColor = true;
+            this.BTNUsuarioActivar.Click += new System.EventHandler(this.DarDeAltaUsuarios);
             // 
             // FormPrincipalUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 814);
+            this.ClientSize = new System.Drawing.Size(944, 661);
             this.Controls.Add(this.BTNUsuarioActivar);
             this.Controls.Add(this.BTNUsuarioBaja);
             this.Controls.Add(this.BTNUsuarioModificar);
             this.Controls.Add(this.BTNUsuarioAgregar);
             this.Controls.Add(this.DGUusarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrincipalUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Usuarios";
