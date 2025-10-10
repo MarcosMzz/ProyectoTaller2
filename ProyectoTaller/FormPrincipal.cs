@@ -83,7 +83,7 @@ namespace ProyectoTaller
         {
             if (Sesion.Rol == "Vendedor")
             {
-                abrirForm(new FormPrincipalVentasVendedor());
+                abrirForm(new FormAgregarVentas());
             }
             else if (Sesion.Rol == "Supervisor")
             {

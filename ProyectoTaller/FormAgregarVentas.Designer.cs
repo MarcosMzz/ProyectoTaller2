@@ -138,15 +138,15 @@
             this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // CBDni
             // 
             this.CBDni.FormattingEnabled = true;
-            this.CBDni.Location = new System.Drawing.Point(0, 32);
+            this.CBDni.Location = new System.Drawing.Point(4, 32);
             this.CBDni.Name = "CBDni";
             this.CBDni.Size = new System.Drawing.Size(121, 28);
             this.CBDni.TabIndex = 1;
+            this.CBDni.SelectedIndexChanged += new System.EventHandler(this.CBDni_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -224,6 +224,7 @@
             this.CBAuto.Name = "CBAuto";
             this.CBAuto.Size = new System.Drawing.Size(298, 27);
             this.CBAuto.TabIndex = 9;
+            this.CBAuto.SelectedIndexChanged += new System.EventHandler(this.CBAuto_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -259,6 +260,7 @@
             this.BTNAgregarProducto.TabIndex = 4;
             this.BTNAgregarProducto.Text = "Agregar";
             this.BTNAgregarProducto.UseVisualStyleBackColor = true;
+            this.BTNAgregarProducto.Click += new System.EventHandler(this.agregarProducto);
             // 
             // BTNLimpiar
             // 
@@ -268,6 +270,7 @@
             this.BTNLimpiar.TabIndex = 5;
             this.BTNLimpiar.Text = "Limpar";
             this.BTNLimpiar.UseVisualStyleBackColor = true;
+            this.BTNLimpiar.Click += new System.EventHandler(this.limparDatosVehiculo);
             // 
             // DGProductosAgregados
             // 
@@ -325,7 +328,6 @@
             this.LTotal.Size = new System.Drawing.Size(50, 19);
             this.LTotal.TabIndex = 1;
             this.LTotal.Text = "Total";
-            this.LTotal.Click += new System.EventHandler(this.label13_Click);
             // 
             // BTNFinalizarVenta
             // 
@@ -335,6 +337,7 @@
             this.BTNFinalizarVenta.TabIndex = 2;
             this.BTNFinalizarVenta.Text = "Finalizar Venta";
             this.BTNFinalizarVenta.UseVisualStyleBackColor = true;
+            this.BTNFinalizarVenta.Click += new System.EventHandler(this.finalizarVenta);
             // 
             // BTNCancelarVenta
             // 
@@ -344,6 +347,7 @@
             this.BTNCancelarVenta.TabIndex = 3;
             this.BTNCancelarVenta.Text = "Cancelar Venta";
             this.BTNCancelarVenta.UseVisualStyleBackColor = true;
+            this.BTNCancelarVenta.Click += new System.EventHandler(this.cancelarVenta);
             // 
             // label13
             // 
@@ -382,6 +386,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Elimnar Producto";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BTNEliminarProducto_Click);
             // 
             // FormAgregarVentas
             // 
@@ -399,6 +404,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FormAgregarVentas";
             this.Text = "AgregarVenta";
+            this.Load += new System.EventHandler(this.preCargarDatos);
             this.PanelProducto.ResumeLayout(false);
             this.PanelProducto.PerformLayout();
             this.panel2.ResumeLayout(false);
