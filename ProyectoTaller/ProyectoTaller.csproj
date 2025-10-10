@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarVentas.Designer.cs">
+      <DependentUpon>FormAgregarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarVentas.resx">
+      <DependentUpon>FormAgregarVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalAutos.resx">
       <DependentUpon>FormPrincipalAutos.cs</DependentUpon>
     </EmbeddedResource>
