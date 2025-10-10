@@ -465,7 +465,14 @@ namespace ProyectoTaller
                 MessageBox.Show("Debe seleccionar un Cliente para completar la venta.", "Error de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            int idCliente = (int)CBDni.SelectedValue;
+
+            int idCliente = 0; // Inicializamos a 0
+            if (!int.TryParse(CBDni.SelectedValue.ToString(), out idCliente) || idCliente <= 0)
+            {
+                // Esto captura la InvalidCastException y el caso de ID inválido.
+                MessageBox.Show("El ID de cliente es inválido. Seleccione el DNI nuevamente.", "Error de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             // 0.2 Obtener ID del Vendedor (Desde la Clase Sesion)
             int idUsuarioVendedor = Sesion.UsuarioId;
