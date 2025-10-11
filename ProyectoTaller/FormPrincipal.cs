@@ -20,7 +20,16 @@ namespace ProyectoTaller
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            refrescarForm();
+            
+        }
+
+        private void refrescarForm()
+        {
             this.Text = $"Bienvenido {Sesion.Nombre} {Sesion.Apellido} - Rol: {Sesion.Rol}";
+
+            MSBackup.Visible = false;
+
 
             if (Sesion.Rol == "Administrador")
             {
@@ -28,6 +37,7 @@ namespace ProyectoTaller
                 MSVehiculos.Enabled = false;
                 MSVentas.Enabled = false;
                 MSUsuarios.Enabled = true;
+                MSBackup.Visible = true;
             }
             else if (Sesion.Rol == "Vendedor")
             {
@@ -51,7 +61,7 @@ namespace ProyectoTaller
                 MSVentas.Enabled = false;
                 MSUsuarios.Enabled = false;
             }
-            
+
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +103,12 @@ namespace ProyectoTaller
 
         private void CerrarSesion(object sender, EventArgs e)
         {
+            // === Cierra cualquier formulario MDI hijo ===
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+
             // Limpiar la sesión
             Sesion.UsuarioId = 0;
             Sesion.Nombre = null;
@@ -101,21 +117,26 @@ namespace ProyectoTaller
             Sesion.Rol = null;
             Sesion.LoginExitoso = false;
 
-            // Ocultar el formulario principal
+            // === Ocultar y Abrir Login ===
             this.Hide();
 
-            // Abrir login
-            FormLogin login = new FormLogin();
-            login.ShowDialog();
+            // Usamos 'using' para garantizar que la ventana de login se destruya al salir.
+            using (FormLogin login = new FormLogin())
+            {
+                login.ShowDialog();
+            }
 
-            // Revisar si login fue exitoso
+            // === Decisión Final (Control de Duplicación) ===
             if (Sesion.LoginExitoso)
             {
-                this.Show(); // volver a mostrar principal
+                // Solo volvemos a mostrar la misma instancia de FormPrincipal.
+                this.Show();
+                refrescarForm();
             }
             else
             {
-                // Si se cerró con X o canceló, cerramos la app
+                // Si el usuario cerró el login, cerramos esta instancia del Principal
+                // para terminar la aplicación.
                 this.Close();
             }
         }
@@ -123,6 +144,11 @@ namespace ProyectoTaller
         private void abrirUsuarios(object sender, EventArgs e)
         {
             abrirForm(new FormPrincipalUsuarios());
+        }
+
+        private void abrirFormBackUp(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -72,10 +72,9 @@ namespace ProyectoTaller
                                 Sesion.LoginExitoso = true;
                                 MessageBox.Show("Inicio de sesion exitoso");
 
-                                FormPrincipal formPrincipal = new FormPrincipal();
-                                this.Hide(); // oculta el login
-                                formPrincipal.ShowDialog(); // abre el menú principal
-                                this.Close(); // cierra el login cuando cierres el principal
+                                this.DialogResult = DialogResult.OK; // Le dice al Main que el login fue exitoso.
+                                this.Close();
+
                             }
                             else
                             {

@@ -46,7 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupService.cs" />
     <Compile Include="DetalleTemporal.cs" />
+    <Compile Include="FormBackUpDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBackUpDB.Designer.cs">
+      <DependentUpon>FormBackUpDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgregarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +137,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAgregarVentas.resx">
       <DependentUpon>FormAgregarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBackUpDB.resx">
+      <DependentUpon>FormBackUpDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalAutos.resx">
       <DependentUpon>FormPrincipalAutos.cs</DependentUpon>

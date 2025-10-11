@@ -34,6 +34,7 @@
             this.MSVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.MSUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             this.MSVehiculos,
             this.MSVentas,
             this.MSUsuarios,
-            this.cerrarSesionToolStripMenuItem});
+            this.cerrarSesionToolStripMenuItem,
+            this.MSBackup});
             this.menuStrip1.Location = new System.Drawing.Point(0, 657);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(944, 24);
@@ -87,6 +89,14 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesion);
             // 
+            // MSBackup
+            // 
+            this.MSBackup.Name = "MSBackup";
+            this.MSBackup.Size = new System.Drawing.Size(93, 20);
+            this.MSBackup.Text = "Hacer BackUp";
+            this.MSBackup.Visible = false;
+            this.MSBackup.Click += new System.EventHandler(this.abrirFormBackUp);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,5 +124,6 @@
         private System.Windows.Forms.ToolStripMenuItem MSVentas;
         private System.Windows.Forms.ToolStripMenuItem MSUsuarios;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MSBackup;
     }
 }

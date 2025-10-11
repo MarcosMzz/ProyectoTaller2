@@ -16,7 +16,16 @@ namespace ProyectoTaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+
+            FormLogin login = new FormLogin();
+
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                // 2. Si el login fue exitoso, abrimos el FormPrincipal.
+                FormPrincipal principal = new FormPrincipal();
+                Application.Run(principal);
+                
+            }
         }
     }
 }
