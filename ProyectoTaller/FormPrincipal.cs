@@ -65,7 +65,7 @@ namespace ProyectoTaller
             abrirForm(new FormPrincipalAutos());
         }
 
-        private void abrirForm(Form childForm)
+        public void abrirForm(Form childForm)
         {
             // Cierra todos los formularios hijos abiertos
             foreach (Form form in this.MdiChildren)

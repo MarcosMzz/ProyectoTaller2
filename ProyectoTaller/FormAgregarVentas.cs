@@ -436,14 +436,7 @@ namespace ProyectoTaller
 
             if (resultado == DialogResult.Yes)
             {
-                // 1. Limpiar Carrito
-                limparCarrito();
-
-                // 2. Limpiar Vehículo
-                limparDatosVehiculo(null, null);
-
-                // 3. Limpiar Cliente
-                limparDatosCliente();
+                limpiarTodoElFormulario();
 
                 MessageBox.Show("Venta cancelada. Formulario reiniciado.", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -585,6 +578,20 @@ namespace ProyectoTaller
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void mostrarFormVentasTotales(object sender, EventArgs e)
+        {
+            // 1. Obtenemos una referencia al FormPrincipal (el padre MDI)
+            FormPrincipal padre = this.MdiParent as FormPrincipal;
+
+            if (padre != null)
+            {
+                // 2. Le pedimos al padre que cierre lo actual y abra el formulario de destino.
+                
+                padre.abrirForm(new FormPrincipalVentasVendedor());
+
             }
         }
     }

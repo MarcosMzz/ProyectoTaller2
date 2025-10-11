@@ -66,5 +66,17 @@ namespace ProyectoTaller
         {
             CargarVentasVendedor();
         }
+
+        private void abrirFormAgregarVentas(object sender, EventArgs e)
+        {
+            FormPrincipal padre = this.MdiParent as FormPrincipal;
+
+            if (padre != null)
+            {
+                // Pedimos al padre que cierre el listado y abra la vista de carrito
+                padre.abrirForm(new FormAgregarVentas());
+
+            }
+        }
     }
 }
