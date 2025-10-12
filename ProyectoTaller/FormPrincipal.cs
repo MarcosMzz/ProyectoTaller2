@@ -148,7 +148,7 @@ namespace ProyectoTaller
 
         private void abrirFormBackUp(object sender, EventArgs e)
         {
-
+            abrirForm(new FormBackUpDB());
         }
     }
 }

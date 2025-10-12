@@ -85,6 +85,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Hacer BackUp";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.hacerBackUp);
             // 
             // label2
             // 
@@ -102,6 +103,7 @@
             this.ClientSize = new System.Drawing.Size(488, 206);
             this.Controls.Add(this.panel1);
             this.Name = "FormBackUpDB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BackUp BDD";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

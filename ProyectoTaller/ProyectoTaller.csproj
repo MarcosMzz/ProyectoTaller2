@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackupService.cs" />
+    <Compile Include="ConexionDB.cs" />
     <Compile Include="DetalleTemporal.cs" />
     <Compile Include="FormBackUpDB.cs">
       <SubType>Form</SubType>
