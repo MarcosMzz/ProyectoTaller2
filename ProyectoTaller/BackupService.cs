@@ -141,7 +141,7 @@ namespace ProyectoTaller
 
             {
 
-                string filename = string.Format("{0}-{1}.bak", databaseName, DateTime.Now.ToString("yyyy-MM-dd_HHmmss"));
+                string filename = string.Format("{0}-{1}.bak", databaseName, DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
 
 
 
