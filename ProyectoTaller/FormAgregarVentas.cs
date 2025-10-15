@@ -217,11 +217,11 @@ namespace ProyectoTaller
                 return;
             }
 
-            // ------------------------------------------------------------------
-            // 🟥 CÓDIGO CORREGIDO Y SEGURO PARA OBTENER EL ID DEL VEHÍCULO
-            // ------------------------------------------------------------------
+            
+            //Obtenemos ID de vehiculo
             int idAutoSeleccionado = 0;
             // Utilizamos el TryParse para la conversión segura, que previene el InvalidCastException
+
             if (!int.TryParse(CBAuto.SelectedValue.ToString(), out idAutoSeleccionado))
             {
                 MessageBox.Show("Error al obtener el ID del vehículo. Contacte a soporte.", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -232,9 +232,9 @@ namespace ProyectoTaller
             string modelo = CBAuto.Text;
             string marca = string.Empty;
 
-            // ------------------------------------------------------------------
-            // CORRECCIÓN CRÍTICA 2: Extracción robusta del Precio
-            // ------------------------------------------------------------------
+         
+            //2: Extracción robusta del Precio
+           
             decimal precioUnitario;
             // Usamos NumberStyles.Currency para aceptar el símbolo '$' y otros formatos de moneda,
             // garantizando que la conversión funcione con 13.500.000,00 o $13500000.00
@@ -374,16 +374,15 @@ namespace ProyectoTaller
 
                 // === 4. Actualización de la Interfaz ===
 
-                // A. Recalcular el Total (la función ya está lista de antes)
+                // A. Recalcular el Total
                 RecalcularTotal();
 
                 // B. Refrescar el DataGridView
-                // Es necesario reasignar el DataSource para que la lista se actualice visualmente.
+                
                 DGProductosAgregados.DataSource = null;
                 DGProductosAgregados.DataSource = carrito;
 
-                // Opcional: Mostrar mensaje de éxito
-                // MessageBox.Show("Producto eliminado correctamente.", "Éxito");
+
             }
         }
 

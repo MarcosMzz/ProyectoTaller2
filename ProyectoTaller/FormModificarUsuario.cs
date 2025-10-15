@@ -31,7 +31,7 @@ namespace ProyectoTaller
 
         private void CargarTiposUsuario()
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(ConexionDB.ConnectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT ID_Perfiles, Descripcion FROM Perfiles", conn);

@@ -51,7 +51,7 @@ namespace ProyectoTaller
 
             try
             {
-                using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+                using (SqlConnection conn = new SqlConnection(ConexionDB.ConnectionString))
                 {
                     conn.Open();
 
