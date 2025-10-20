@@ -38,9 +38,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(295, 12);
+            this.button1.Location = new System.Drawing.Point(393, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 69);
+            this.button1.Size = new System.Drawing.Size(121, 85);
             this.button1.TabIndex = 0;
             this.button1.Text = "Agregar Cliente";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(407, 12);
+            this.button2.Location = new System.Drawing.Point(543, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 69);
+            this.button2.Size = new System.Drawing.Size(121, 85);
             this.button2.TabIndex = 1;
             this.button2.Text = "Dar de Baja Cliente";
             this.button2.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(518, 12);
+            this.button3.Location = new System.Drawing.Point(691, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 69);
+            this.button3.Size = new System.Drawing.Size(121, 85);
             this.button3.TabIndex = 2;
             this.button3.Text = "Modificar Cliente";
             this.button3.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(630, 12);
+            this.button4.Location = new System.Drawing.Point(840, 15);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 69);
+            this.button4.Size = new System.Drawing.Size(121, 85);
             this.button4.TabIndex = 4;
             this.button4.Text = "Activar Cliente";
             this.button4.UseVisualStyleBackColor = true;
@@ -78,24 +82,30 @@
             // 
             // DGClientes
             // 
+            this.DGClientes.AllowUserToAddRows = false;
+            this.DGClientes.AllowUserToDeleteRows = false;
             this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGClientes.Location = new System.Drawing.Point(0, 99);
-            this.DGClientes.MaximumSize = new System.Drawing.Size(948, 571);
+            this.DGClientes.Location = new System.Drawing.Point(0, 122);
+            this.DGClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGClientes.MaximumSize = new System.Drawing.Size(1264, 703);
             this.DGClientes.Name = "DGClientes";
-            this.DGClientes.Size = new System.Drawing.Size(948, 571);
+            this.DGClientes.ReadOnly = true;
+            this.DGClientes.RowHeadersWidth = 51;
+            this.DGClientes.Size = new System.Drawing.Size(1264, 703);
             this.DGClientes.TabIndex = 5;
             // 
             // FormPrincipalClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 661);
+            this.ClientSize = new System.Drawing.Size(1259, 814);
             this.Controls.Add(this.DGClientes);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrincipalClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Clientes";
