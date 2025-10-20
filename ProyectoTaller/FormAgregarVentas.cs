@@ -134,6 +134,7 @@ namespace ProyectoTaller
         }
         private void preCargarDatos(object sender, EventArgs e)
         {
+            UIStyles.AddHoverEffectToAllButtons(this);
             CargarVehiculos();
             CargarClientes();
             LNombreVendedor.Text = Sesion.Nombre + " " +Sesion.Apellido;

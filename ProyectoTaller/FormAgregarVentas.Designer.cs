@@ -53,6 +53,7 @@
             this.DGProductosAgregados = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.LNombreVendedor = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.BTNCancelarVenta = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.PanelProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDCantidad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
@@ -82,6 +82,7 @@
             // 
             // PanelProducto
             // 
+            this.PanelProducto.Controls.Add(this.button1);
             this.PanelProducto.Controls.Add(this.NUDCantidad);
             this.PanelProducto.Controls.Add(this.BTNLimpiar);
             this.PanelProducto.Controls.Add(this.BTNAgregarProducto);
@@ -91,24 +92,24 @@
             this.PanelProducto.Controls.Add(this.CBAuto);
             this.PanelProducto.Controls.Add(this.label8);
             this.PanelProducto.Controls.Add(this.panel2);
-            this.PanelProducto.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelProducto.Location = new System.Drawing.Point(8, 25);
             this.PanelProducto.Name = "PanelProducto";
-            this.PanelProducto.Size = new System.Drawing.Size(389, 180);
+            this.PanelProducto.Size = new System.Drawing.Size(389, 323);
             this.PanelProducto.TabIndex = 2;
             // 
             // NUDCantidad
             // 
             this.NUDCantidad.Location = new System.Drawing.Point(283, 109);
             this.NUDCantidad.Name = "NUDCantidad";
-            this.NUDCantidad.Size = new System.Drawing.Size(82, 26);
+            this.NUDCantidad.Size = new System.Drawing.Size(82, 27);
             this.NUDCantidad.TabIndex = 12;
             // 
             // BTNLimpiar
             // 
             this.BTNLimpiar.Location = new System.Drawing.Point(283, 147);
             this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(91, 27);
+            this.BTNLimpiar.Size = new System.Drawing.Size(91, 33);
             this.BTNLimpiar.TabIndex = 5;
             this.BTNLimpiar.Text = "Limpar";
             this.BTNLimpiar.UseVisualStyleBackColor = true;
@@ -118,7 +119,7 @@
             // 
             this.BTNAgregarProducto.Location = new System.Drawing.Point(8, 145);
             this.BTNAgregarProducto.Name = "BTNAgregarProducto";
-            this.BTNAgregarProducto.Size = new System.Drawing.Size(85, 26);
+            this.BTNAgregarProducto.Size = new System.Drawing.Size(86, 35);
             this.BTNAgregarProducto.TabIndex = 4;
             this.BTNAgregarProducto.Text = "Agregar";
             this.BTNAgregarProducto.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             this.TBPrecio.Location = new System.Drawing.Point(9, 109);
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.ReadOnly = true;
-            this.TBPrecio.Size = new System.Drawing.Size(245, 26);
+            this.TBPrecio.Size = new System.Drawing.Size(245, 27);
             this.TBPrecio.TabIndex = 9;
             // 
             // label10
@@ -137,7 +138,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(283, 75);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 19);
+            this.label10.Size = new System.Drawing.Size(71, 19);
             this.label10.TabIndex = 11;
             this.label10.Text = "Cantidad";
             // 
@@ -146,7 +147,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(5, 75);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 19);
+            this.label9.Size = new System.Drawing.Size(52, 19);
             this.label9.TabIndex = 10;
             this.label9.Text = "Precio";
             // 
@@ -164,7 +165,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(5, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 19);
+            this.label8.Size = new System.Drawing.Size(69, 19);
             this.label8.TabIndex = 9;
             this.label8.Text = "Vehiculo";
             // 
@@ -181,7 +182,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "Producto";
             // 
@@ -313,6 +314,16 @@
             this.panel1.Size = new System.Drawing.Size(307, 295);
             this.panel1.TabIndex = 6;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 244);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(307, 51);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Ver todas las ventas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.mostrarFormVentasTotales);
+            // 
             // LNombreVendedor
             // 
             this.LNombreVendedor.AutoSize = true;
@@ -382,7 +393,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 264);
+            this.button1.Location = new System.Drawing.Point(7, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 52);
             this.button1.TabIndex = 8;
@@ -390,22 +401,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BTNEliminarProducto_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(307, 51);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Ver todas las ventas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.mostrarFormVentasTotales);
-            // 
             // FormAgregarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 661);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
