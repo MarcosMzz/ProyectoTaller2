@@ -1,11 +1,15 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -137,7 +141,7 @@ namespace ProyectoTaller
             UIStyles.AddHoverEffectToAllButtons(this);
             CargarVehiculos();
             CargarClientes();
-            LNombreVendedor.Text = Sesion.Nombre + " " +Sesion.Apellido;
+            LNombreVendedor.Text = Sesion.Nombre + " " + Sesion.Apellido;
         }
 
         private void CBAuto_SelectedIndexChanged(object sender, EventArgs e)
@@ -218,7 +222,7 @@ namespace ProyectoTaller
                 return;
             }
 
-            
+
             //Obtenemos ID de vehiculo
             int idAutoSeleccionado = 0;
             // Utilizamos el TryParse para la conversión segura, que previene el InvalidCastException
@@ -233,9 +237,9 @@ namespace ProyectoTaller
             string modelo = CBAuto.Text;
             string marca = string.Empty;
 
-         
+
             //2: Extracción robusta del Precio
-           
+
             decimal precioUnitario;
             // Usamos NumberStyles.Currency para aceptar el símbolo '$' y otros formatos de moneda,
             // garantizando que la conversión funcione con 13.500.000,00 o $13500000.00
@@ -379,7 +383,7 @@ namespace ProyectoTaller
                 RecalcularTotal();
 
                 // B. Refrescar el DataGridView
-                
+
                 DGProductosAgregados.DataSource = null;
                 DGProductosAgregados.DataSource = carrito;
 
@@ -557,6 +561,9 @@ namespace ProyectoTaller
                     transaction.Commit();
                     MessageBox.Show($"Venta Nro. {idVentaCabecera} registrada con éxito. Stock actualizado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    // === 6. GENERAR FACTURA ===
+                    generarFactura(idVentaCabecera);
+
                     // Llamamos a la función de limpieza para reiniciar el formulario
                     limpiarTodoElFormulario();
                 }
@@ -589,11 +596,129 @@ namespace ProyectoTaller
             if (padre != null)
             {
                 // 2. Le pedimos al padre que cierre lo actual y abra el formulario de destino.
-                
+
                 padre.abrirForm(new FormPrincipalVentasVendedor());
 
             }
         }
+
+        private void generarFactura(int id)
+        {
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.Filter = "Archivo PDF (*.pdf)|*.pdf";
+            guardar.FileName = "Factura.pdf";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Crear documento y configurar márgenes
+                    Document doc = new Document(PageSize.A4, 40, 40, 40, 40);
+                    PdfWriter.GetInstance(doc, new FileStream(guardar.FileName, FileMode.Create));
+                    doc.Open();
+
+                    // === ENCABEZADO ===
+                    iTextSharp.text.Font fuenteTitulo = FontFactory.GetFont("Helvetica", 18, iTextSharp.text.Font.BOLD);
+                    iTextSharp.text.Font fuenteNormal = FontFactory.GetFont("Helvetica", 11, iTextSharp.text.Font.NORMAL);
+                    iTextSharp.text.Font fuenteNegrita = FontFactory.GetFont("Helvetica", 11, iTextSharp.text.Font.BOLD);
+
+                    Paragraph titulo = new Paragraph("FACTURA", fuenteTitulo);
+                    titulo.Alignment = Element.ALIGN_CENTER;
+                    titulo.SpacingAfter = 20;
+                    doc.Add(titulo);
+
+                    PdfPTable tablaEncabezado = new PdfPTable(2);
+                    tablaEncabezado.WidthPercentage = 100;
+                    tablaEncabezado.SetWidths(new float[] { 70, 30 });
+
+                    // Datos de la empresa
+                    PdfPCell empresa = new PdfPCell(new Phrase("XPORT\nCUIT: 12-12345678-9\nDirección: Yrigoyen 341\nTel: (011) 1234-5678", fuenteNormal));
+                    empresa.Border = 0;
+                    tablaEncabezado.AddCell(empresa);
+
+                    // Fecha y número de factura
+                    PdfPCell datosFactura = new PdfPCell(new Phrase($"Fecha: {DateTime.Now:dd/MM/yyyy}\nFactura N°: " + id, fuenteNormal));
+                    datosFactura.HorizontalAlignment = Element.ALIGN_RIGHT;
+                    datosFactura.Border = 0;
+                    tablaEncabezado.AddCell(datosFactura);
+
+                    doc.Add(tablaEncabezado);
+                    doc.Add(new Paragraph("\n"));
+
+                    // === DATOS DEL CLIENTE ===
+                    PdfPTable tablaCliente = new PdfPTable(1);
+                    tablaCliente.WidthPercentage = 100;
+                    tablaCliente.SpacingAfter = 10;
+
+                    PdfPCell tituloCliente = new PdfPCell(new Phrase("Datos del Cliente", fuenteNegrita));
+                    tituloCliente.BackgroundColor = new BaseColor(230, 230, 230);
+                    tituloCliente.Border = 0;
+                    tablaCliente.AddCell(tituloCliente);
+
+                    PdfPCell datosCliente = new PdfPCell(new Phrase("Nombre: " + TBNombre.Text + TBApellido.Text + "\nDNI: " + CBDni.Text + "\nEmail: " + TBEmail.Text, fuenteNormal));
+                    datosCliente.Border = 0;
+                    tablaCliente.AddCell(datosCliente);
+
+                    doc.Add(tablaCliente);
+
+                    // === TABLA DE PRODUCTOS / SERVICIOS ===
+                    PdfPTable tabla = new PdfPTable(DGProductosAgregados.Columns.Count);
+                    tabla.WidthPercentage = 100;
+                    tabla.SpacingBefore = 10;
+                    tabla.SpacingAfter = 10;
+
+                    // Encabezados
+                    foreach (DataGridViewColumn col in DGProductosAgregados.Columns)
+                    {
+                        if (col.Name == "ID_Auto") continue;
+                        PdfPCell celda = new PdfPCell(new Phrase(col.HeaderText, fuenteNegrita));
+                        celda.BackgroundColor = new BaseColor(240, 240, 240);
+                        celda.HorizontalAlignment = Element.ALIGN_CENTER;
+                        tabla.AddCell(celda);
+                    }
+
+                    // Filas
+                    foreach (DataGridViewRow fila in DGProductosAgregados.Rows)
+                    {
+                        if (!fila.IsNewRow)
+                        {
+                            foreach (DataGridViewCell celda in fila.Cells)
+                            {
+                                if (celda.OwningColumn.Name == "ID_Auto") continue;
+                                tabla.AddCell(new Phrase(celda.Value?.ToString() ?? "", fuenteNormal));
+                            }
+                        }
+                    }
+
+                    doc.Add(tabla);
+
+                    // === TOTAL ===
+                    decimal total = 0;
+                    foreach (DataGridViewRow fila in DGProductosAgregados.Rows)
+                    {
+                        if (!fila.IsNewRow && decimal.TryParse(fila.Cells["Subtotal"].Value?.ToString(), out decimal valor))
+                            total += valor;
+                    }
+
+                    Paragraph totalTxt = new Paragraph($"TOTAL: ${total:F2}", fuenteTitulo);
+                    totalTxt.Alignment = Element.ALIGN_RIGHT;
+                    doc.Add(totalTxt);
+
+                    // === PIE ===
+                    Paragraph pie = new Paragraph("\nGracias por su compra.", fuenteNormal);
+                    pie.Alignment = Element.ALIGN_CENTER;
+                    pie.SpacingBefore = 20;
+                    doc.Add(pie);
+
+                    doc.Close();
+
+                    MessageBox.Show("Factura generada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al generar la factura: " + ex.Message);
+                }
+            }
+        }
     }
-    
 }
