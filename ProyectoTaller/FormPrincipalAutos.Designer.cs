@@ -58,6 +58,7 @@
             this.BTNAgregarAuto.TabIndex = 6;
             this.BTNAgregarAuto.Text = "Agregar";
             this.BTNAgregarAuto.UseVisualStyleBackColor = true;
+            this.BTNAgregarAuto.Click += new System.EventHandler(this.abrirFormAgregarAutos);
             // 
             // BTNModificarAuto
             // 
@@ -67,6 +68,7 @@
             this.BTNModificarAuto.TabIndex = 7;
             this.BTNModificarAuto.Text = "Modificar";
             this.BTNModificarAuto.UseVisualStyleBackColor = true;
+            this.BTNModificarAuto.Click += new System.EventHandler(this.abrirFormModificarAutos);
             // 
             // BTNDarDeBajaAuto
             // 
@@ -76,6 +78,7 @@
             this.BTNDarDeBajaAuto.TabIndex = 8;
             this.BTNDarDeBajaAuto.Text = "Dar de Baja";
             this.BTNDarDeBajaAuto.UseVisualStyleBackColor = true;
+            this.BTNDarDeBajaAuto.Click += new System.EventHandler(this.darDeBajaAutos);
             // 
             // BTNActivarAuto
             // 
@@ -85,6 +88,7 @@
             this.BTNActivarAuto.TabIndex = 9;
             this.BTNActivarAuto.Text = "Dar de Alta";
             this.BTNActivarAuto.UseVisualStyleBackColor = true;
+            this.BTNActivarAuto.Click += new System.EventHandler(this.darDeAltaAutos);
             // 
             // label1
             // 

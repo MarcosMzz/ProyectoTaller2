@@ -14,7 +14,6 @@ namespace ProyectoTaller
     public partial class FormModifClientes : Form
     {
         private int id_editar;
-        private DataGridViewRow filaOriginal;
 
         private FormPrincipalClientes formPrincipal; // referencia al form principal
 

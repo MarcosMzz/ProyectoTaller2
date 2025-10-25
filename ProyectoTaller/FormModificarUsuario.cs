@@ -14,7 +14,6 @@ namespace ProyectoTaller
     public partial class FormModificarUsuario : Form
     {
         private int id_editar;
-        private DataGridViewRow filaOriginal;
 
         private FormPrincipalUsuarios formPrincipal; // referencia al form principal
         public FormModificarUsuario(FormPrincipalUsuarios form, int id)

@@ -14,7 +14,6 @@ namespace ProyectoTaller
     public partial class FormAgregarClientes : Form
     {
 
-        private DataGridViewRow filaOriginal;
         public FormAgregarClientes()
         {
             InitializeComponent();

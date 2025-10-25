@@ -30,17 +30,17 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TBModelo = new System.Windows.Forms.TextBox();
             this.TBStock = new System.Windows.Forms.TextBox();
-            this.TBStock_Min = new System.Windows.Forms.TextBox();
             this.TBPrecio = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.CBMarcas = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TBStock_Min = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -62,16 +62,6 @@
             this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Stock";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Stock Minimo";
             // 
             // label6
             // 
@@ -107,14 +97,6 @@
             this.TBStock.Size = new System.Drawing.Size(70, 20);
             this.TBStock.TabIndex = 10;
             this.TBStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
-            // 
-            // TBStock_Min
-            // 
-            this.TBStock_Min.Location = new System.Drawing.Point(135, 140);
-            this.TBStock_Min.Name = "TBStock_Min";
-            this.TBStock_Min.Size = new System.Drawing.Size(70, 20);
-            this.TBStock_Min.TabIndex = 11;
-            this.TBStock_Min.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // TBPrecio
             // 
@@ -163,6 +145,24 @@
             this.CBMarcas.Size = new System.Drawing.Size(152, 21);
             this.CBMarcas.TabIndex = 21;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Stock Minimo";
+            // 
+            // TBStock_Min
+            // 
+            this.TBStock_Min.Location = new System.Drawing.Point(135, 140);
+            this.TBStock_Min.Name = "TBStock_Min";
+            this.TBStock_Min.Size = new System.Drawing.Size(70, 20);
+            this.TBStock_Min.TabIndex = 11;
+            this.TBStock_Min.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
+            // 
             // FormAgregarAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,16 +192,16 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TBModelo;
         private System.Windows.Forms.TextBox TBStock;
-        private System.Windows.Forms.TextBox TBStock_Min;
         private System.Windows.Forms.TextBox TBPrecio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox CBMarcas;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TBStock_Min;
     }
 }

@@ -67,6 +67,12 @@
     <Compile Include="FormAgregarVentas.Designer.cs">
       <DependentUpon>FormAgregarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormModificarAutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificarAutos.Designer.cs">
+      <DependentUpon>FormModificarAutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBackUpDB.resx">
       <DependentUpon>FormBackUpDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificarAutos.resx">
+      <DependentUpon>FormModificarAutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalAutos.resx">
       <DependentUpon>FormPrincipalAutos.cs</DependentUpon>
