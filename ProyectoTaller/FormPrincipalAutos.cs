@@ -21,41 +21,6 @@ namespace ProyectoTaller
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormAgregarAutos ventana = new FormAgregarAutos(this);
-            ventana.Show(); 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            /*if (DGAutos.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("Debe seleccionar alguna fila para ser eliminada", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (MessageBox.Show("¿Esta seguro que desea eliminar las filas seleccionadas?", "Confirmar Eliminacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow row in DGAutos.SelectedRows)
-                {
-                    DGAutos.Rows.Remove(row);
-                }
-            }*/
-        }
-
-        private void mostrarAgregarClientes(object sender, EventArgs e)
-        {
-            // Crear instancia del form de clientes
-            FormPrincipalClientes formClientes = new FormPrincipalClientes();
-
-            // Mostrarlo
-            formClientes.Show();
-        }
-
-        private void cargarDatosPrueba(object sender, EventArgs e)
-        {
-
-        }
-
 
         public void CargarAutos(string where = "")
         {

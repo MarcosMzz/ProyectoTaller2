@@ -111,7 +111,7 @@ namespace ProyectoTaller
 
                         cmd.ExecuteNonQuery();
 
-                        //formPrincipal.CargarClientes(); // refresca la grilla automáticamente
+
 
                     }
                 }
