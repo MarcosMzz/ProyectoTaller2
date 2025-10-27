@@ -52,7 +52,7 @@ namespace ProyectoTaller
                     conn.Open();
 
                     // Consulta SQL segura con parámetros
-                    string query = "SELECT u.ID_Usuario, u.Nombre, u.Apellido, u.Email, p.Descripcion FROM Usuarios u INNER JOIN Perfiles p ON u.ID_Perfiles = p.ID_Perfiles WHERE u.Email = @Email AND u.Pass = @Pass;";
+                    string query = "SELECT u.ID_Usuario, u.Nombre, u.Apellido, u.Email, p.Descripcion FROM Usuarios u INNER JOIN Perfiles p ON u.ID_Perfiles = p.ID_Perfiles WHERE u.Email = @Email AND u.Pass = @Pass AND u.Baja = 1;";
 
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
