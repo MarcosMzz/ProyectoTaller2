@@ -176,5 +176,11 @@ namespace ProyectoTaller
         {
             this.CargarVentasSupervisor();
         }
+
+        private void BControlesCruzados_Click(object sender, EventArgs e)
+        {
+            FormControlesCruzados formControles = new FormControlesCruzados(this);
+            formControles.Show();
+        }
     }
 }

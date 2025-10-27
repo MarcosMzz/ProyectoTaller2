@@ -13,7 +13,7 @@ namespace ProyectoTaller
 {
     public partial class FormFiltrarVentasSupervisor : Form
     {
-        FormPrincipalVentasSupervisor formPadre;
+        private FormPrincipalVentasSupervisor formPadre;
         public FormFiltrarVentasSupervisor(FormPrincipalVentasSupervisor formPadre)
         {
             InitializeComponent();
@@ -95,8 +95,9 @@ namespace ProyectoTaller
                 DateTime fechaDesde = DTPDesde.Value.Date;
                 DateTime fechaHasta = DTPHasta.Value.Date;
 
-                // Si querés incluir todo el día "hasta", sumá un día menos un segundo
+                
                 fechaHasta = fechaHasta.AddDays(1).AddSeconds(-1);
+                fechaDesde = fechaDesde.AddDays(-1).AddSeconds(1);
 
                 condiciones.Add($"v.FechaVenta BETWEEN '{fechaDesde:yyyy-MM-dd}' AND '{fechaHasta:yyyy-MM-dd}'");
 

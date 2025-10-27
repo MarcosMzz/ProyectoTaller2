@@ -662,7 +662,7 @@ namespace ProyectoTaller
                     doc.Add(tablaCliente);
 
                     // === TABLA DE PRODUCTOS / SERVICIOS ===
-                    PdfPTable tabla = new PdfPTable(DGProductosAgregados.Columns.Count);
+                    PdfPTable tabla = new PdfPTable(DGProductosAgregados.Columns.Count-1);
                     tabla.WidthPercentage = 100;
                     tabla.SpacingBefore = 10;
                     tabla.SpacingAfter = 10;

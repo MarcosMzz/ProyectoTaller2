@@ -32,6 +32,7 @@
             this.BFiltrarVentas = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BBorrarFiltros = new System.Windows.Forms.Button();
+            this.BControlesCruzados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVentasSupervisor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +40,8 @@
             // 
             this.DGVentasSupervisor.AllowUserToAddRows = false;
             this.DGVentasSupervisor.AllowUserToDeleteRows = false;
+            this.DGVentasSupervisor.AllowUserToResizeColumns = false;
+            this.DGVentasSupervisor.AllowUserToResizeRows = false;
             this.DGVentasSupervisor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVentasSupervisor.Location = new System.Drawing.Point(0, 118);
             this.DGVentasSupervisor.Name = "DGVentasSupervisor";
@@ -63,7 +66,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 77);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Graficar Ventas";
+            this.button2.Text = "Generar PDF";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -77,11 +80,22 @@
             this.BBorrarFiltros.UseVisualStyleBackColor = true;
             this.BBorrarFiltros.Click += new System.EventHandler(this.BBorrarFiltros_Click);
             // 
+            // BControlesCruzados
+            // 
+            this.BControlesCruzados.Location = new System.Drawing.Point(703, 12);
+            this.BControlesCruzados.Name = "BControlesCruzados";
+            this.BControlesCruzados.Size = new System.Drawing.Size(107, 77);
+            this.BControlesCruzados.TabIndex = 4;
+            this.BControlesCruzados.Text = "Controles Cruzados";
+            this.BControlesCruzados.UseVisualStyleBackColor = true;
+            this.BControlesCruzados.Click += new System.EventHandler(this.BControlesCruzados_Click);
+            // 
             // FormPrincipalVentasSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 661);
+            this.Controls.Add(this.BControlesCruzados);
             this.Controls.Add(this.BBorrarFiltros);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BFiltrarVentas);
@@ -96,9 +110,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DGVentasSupervisor;
+        public System.Windows.Forms.DataGridView DGVentasSupervisor;
         private System.Windows.Forms.Button BFiltrarVentas;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BBorrarFiltros;
+        private System.Windows.Forms.Button BControlesCruzados;
     }
 }

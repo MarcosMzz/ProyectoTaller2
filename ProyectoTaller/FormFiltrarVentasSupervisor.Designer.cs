@@ -141,6 +141,7 @@
             this.Controls.Add(this.LHasta);
             this.Controls.Add(this.LDesde);
             this.Name = "FormFiltrarVentasSupervisor";
+            this.Text = "Filtrar";
             this.ResumeLayout(false);
             this.PerformLayout();
 
