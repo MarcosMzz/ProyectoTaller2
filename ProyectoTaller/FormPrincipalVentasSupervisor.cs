@@ -20,7 +20,7 @@ namespace ProyectoTaller
             InitializeComponent();
         }
 
-        private void CargarVentasSupervisor()
+        public void CargarVentasSupervisor(string condicion = null)
         {
             try
             {
@@ -29,19 +29,26 @@ namespace ProyectoTaller
                     conn.Open();
 
                     string query = @"
-                                    SELECT 
-                                        v.ID_Venta,
-                                        ve.Modelo AS Auto,
-                                        u.Nombre + ' ' + u.Apellido AS Vendedor,
-                                        c.Nombre + ' ' + c.Apellido AS Cliente,
-                                        dv.Cantidad,
-                                        dv.SubTotal,
-                                        v.Monto_Total
-                                    FROM Ventas_Cabecera v
-                                    INNER JOIN Detalle_Ventas dv ON v.ID_Venta = dv.ID_Venta
-                                    INNER JOIN Vehiculos ve ON dv.ID_Auto = ve.ID_Auto
-                                    INNER JOIN Usuarios u ON v.ID_Usuario = u.ID_Usuario
-                                    INNER JOIN Cliente c ON v.ID_Cliente = c.ID_Cliente";
+                                     SELECT 
+                                         v.ID_Venta,
+                                         v.FechaVenta AS Fecha,
+                                         ve.Modelo AS Auto,
+                                         u.Nombre + ' ' + u.Apellido AS Vendedor,
+                                         c.Nombre + ' ' + c.Apellido AS Cliente,
+                                         dv.Cantidad,
+                                         dv.SubTotal,
+                                         v.Monto_Total
+                                     FROM Ventas_Cabecera v
+                                     INNER JOIN Detalle_Ventas dv ON v.ID_Venta = dv.ID_Venta
+                                     INNER JOIN Vehiculos ve ON dv.ID_Auto = ve.ID_Auto
+                                     INNER JOIN Usuarios u ON v.ID_Usuario = u.ID_Usuario
+                                     INNER JOIN Cliente c ON v.ID_Cliente = c.ID_Cliente";
+
+                    // Si hay una condición, se agrega al final
+                    if (!string.IsNullOrEmpty(condicion))
+                    {
+                        query += " WHERE " + condicion;
+                    }
 
                     using (SqlDataAdapter da = new SqlDataAdapter(query, conn))
                     {
@@ -49,6 +56,7 @@ namespace ProyectoTaller
                         da.Fill(dt);
                         DGVentasSupervisor.DataSource = dt;
                         DGVentasSupervisor.AllowUserToAddRows = false;
+                        DGVentasSupervisor.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
                     }
                 }
             }
@@ -156,6 +164,17 @@ namespace ProyectoTaller
                     MessageBox.Show("Error al generar el PDF: " + ex.Message);
                 }
             }
+        }
+
+        private void BFiltrar_Click(object sender, EventArgs e)
+        {
+            FormFiltrarVentasSupervisor formFiltrar = new FormFiltrarVentasSupervisor(this);
+            formFiltrar.Show();
+        }
+
+        private void BBorrarFiltros_Click(object sender, EventArgs e)
+        {
+            this.CargarVentasSupervisor();
         }
     }
 }
