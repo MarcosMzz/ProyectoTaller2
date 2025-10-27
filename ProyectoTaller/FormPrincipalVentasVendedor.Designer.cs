@@ -30,6 +30,7 @@
         {
             this.DGVentasVendedor = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.BGenerarPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVentasVendedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,33 +39,41 @@
             this.DGVentasVendedor.AllowUserToAddRows = false;
             this.DGVentasVendedor.AllowUserToDeleteRows = false;
             this.DGVentasVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVentasVendedor.Location = new System.Drawing.Point(1, 165);
-            this.DGVentasVendedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVentasVendedor.Location = new System.Drawing.Point(1, 134);
             this.DGVentasVendedor.Name = "DGVentasVendedor";
             this.DGVentasVendedor.ReadOnly = true;
             this.DGVentasVendedor.RowHeadersWidth = 51;
-            this.DGVentasVendedor.Size = new System.Drawing.Size(1257, 651);
+            this.DGVentasVendedor.Size = new System.Drawing.Size(943, 529);
             this.DGVentasVendedor.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(12, 22);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 96);
+            this.button1.Size = new System.Drawing.Size(123, 78);
             this.button1.TabIndex = 1;
             this.button1.Text = "Agregar Ventas";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.abrirFormAgregarVentas);
             // 
+            // BGenerarPDF
+            // 
+            this.BGenerarPDF.Location = new System.Drawing.Point(809, 22);
+            this.BGenerarPDF.Name = "BGenerarPDF";
+            this.BGenerarPDF.Size = new System.Drawing.Size(123, 78);
+            this.BGenerarPDF.TabIndex = 2;
+            this.BGenerarPDF.Text = "Generar PDF";
+            this.BGenerarPDF.UseVisualStyleBackColor = true;
+            this.BGenerarPDF.Click += new System.EventHandler(this.BGenerarPDF_Click);
+            // 
             // FormPrincipalVentasVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 814);
+            this.ClientSize = new System.Drawing.Size(944, 661);
+            this.Controls.Add(this.BGenerarPDF);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DGVentasVendedor);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrincipalVentasVendedor";
             this.Text = "Ventas Vendedor";
             this.Load += new System.EventHandler(this.cargarVentasVendedor);
@@ -77,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView DGVentasVendedor;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BGenerarPDF;
     }
 }

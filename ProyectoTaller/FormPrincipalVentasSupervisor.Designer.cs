@@ -82,7 +82,7 @@
             // 
             // BControlesCruzados
             // 
-            this.BControlesCruzados.Location = new System.Drawing.Point(703, 12);
+            this.BControlesCruzados.Location = new System.Drawing.Point(703, 13);
             this.BControlesCruzados.Name = "BControlesCruzados";
             this.BControlesCruzados.Size = new System.Drawing.Size(107, 77);
             this.BControlesCruzados.TabIndex = 4;
