@@ -138,7 +138,8 @@
             // 
             // CBMarcas
             // 
-            this.CBMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMarcas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CBMarcas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBMarcas.FormattingEnabled = true;
             this.CBMarcas.Location = new System.Drawing.Point(135, 184);
             this.CBMarcas.Name = "CBMarcas";
