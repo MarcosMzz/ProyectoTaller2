@@ -53,15 +53,15 @@
             this.DGProductosAgregados = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.LNombreVendedor = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.BTNCancelarVenta = new System.Windows.Forms.Button();
             this.BTNFinalizarVenta = new System.Windows.Forms.Button();
             this.LTotal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDCantidad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -273,6 +273,7 @@
             this.CBDni.Size = new System.Drawing.Size(121, 27);
             this.CBDni.TabIndex = 1;
             this.CBDni.SelectedIndexChanged += new System.EventHandler(this.CBDni_SelectedIndexChanged);
+            this.CBDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // label2
             // 
@@ -324,6 +325,16 @@
             this.panel1.Size = new System.Drawing.Size(922, 129);
             this.panel1.TabIndex = 6;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(394, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 23);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Control";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(503, 63);
@@ -333,6 +344,17 @@
             this.button2.Text = "Ver todas las ventas";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.mostrarFormVentasTotales);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(503, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 52);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Elimnar Producto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BTNEliminarProducto_Click);
             // 
             // LNombreVendedor
             // 
@@ -389,27 +411,6 @@
             this.label12.Size = new System.Drawing.Size(110, 19);
             this.label12.TabIndex = 0;
             this.label12.Text = "Precio Final:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(394, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 23);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Control";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(503, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 52);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Elimnar Producto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BTNEliminarProducto_Click);
             // 
             // FormAgregarVentas
             // 
