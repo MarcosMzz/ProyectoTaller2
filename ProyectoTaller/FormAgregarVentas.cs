@@ -604,7 +604,9 @@ namespace ProyectoTaller
         {
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.Filter = "Archivo PDF (*.pdf)|*.pdf";
-            guardar.FileName = "Factura.pdf";
+
+            string nombreFactura = "Factura" + id;
+            guardar.FileName = nombreFactura.Trim() + ".pdf";
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {

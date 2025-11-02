@@ -260,5 +260,17 @@
   <ItemGroup>
     <None Include="Resources\ChangeCar-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-xport-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

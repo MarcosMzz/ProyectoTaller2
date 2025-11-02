@@ -205,7 +205,7 @@
             // 
             // TBEmail
             // 
-            this.TBEmail.Location = new System.Drawing.Point(238, 33);
+            this.TBEmail.Location = new System.Drawing.Point(238, 38);
             this.TBEmail.Name = "TBEmail";
             this.TBEmail.ReadOnly = true;
             this.TBEmail.Size = new System.Drawing.Size(274, 27);
@@ -213,7 +213,7 @@
             // 
             // TBApellido
             // 
-            this.TBApellido.Location = new System.Drawing.Point(238, 99);
+            this.TBApellido.Location = new System.Drawing.Point(238, 109);
             this.TBApellido.Name = "TBApellido";
             this.TBApellido.ReadOnly = true;
             this.TBApellido.Size = new System.Drawing.Size(165, 27);
@@ -221,7 +221,7 @@
             // 
             // TBNombre
             // 
-            this.TBNombre.Location = new System.Drawing.Point(3, 99);
+            this.TBNombre.Location = new System.Drawing.Point(4, 109);
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.ReadOnly = true;
             this.TBNombre.Size = new System.Drawing.Size(172, 27);
@@ -268,7 +268,7 @@
             this.CBDni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CBDni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBDni.FormattingEnabled = true;
-            this.CBDni.Location = new System.Drawing.Point(4, 32);
+            this.CBDni.Location = new System.Drawing.Point(0, 38);
             this.CBDni.Name = "CBDni";
             this.CBDni.Size = new System.Drawing.Size(121, 27);
             this.CBDni.TabIndex = 1;
