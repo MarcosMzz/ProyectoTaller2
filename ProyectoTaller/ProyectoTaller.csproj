@@ -73,12 +73,6 @@
     <Compile Include="FormAgregarVentas.Designer.cs">
       <DependentUpon>FormAgregarVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFiltrarVentasSupervisor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFiltrarVentasSupervisor.Designer.cs">
-      <DependentUpon>FormFiltrarVentasSupervisor.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormModificarAutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBackUpDB.resx">
       <DependentUpon>FormBackUpDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFiltrarVentasSupervisor.resx">
-      <DependentUpon>FormFiltrarVentasSupervisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModificarAutos.resx">
       <DependentUpon>FormModificarAutos.cs</DependentUpon>
