@@ -106,7 +106,7 @@
             this.LVendedor.AutoSize = true;
             this.LVendedor.Location = new System.Drawing.Point(281, 103);
             this.LVendedor.Name = "LVendedor";
-            this.LVendedor.Size = new System.Drawing.Size(57, 13);
+            this.LVendedor.Size = new System.Drawing.Size(72, 17);
             this.LVendedor.TabIndex = 17;
             this.LVendedor.Text = "Vendedor:";
             // 
@@ -116,7 +116,7 @@
             this.LFPU.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFPU.Location = new System.Drawing.Point(364, 58);
             this.LFPU.Name = "LFPU";
-            this.LFPU.Size = new System.Drawing.Size(112, 14);
+            this.LFPU.Size = new System.Drawing.Size(141, 18);
             this.LFPU.TabIndex = 16;
             this.LFPU.Text = "Filtro Por Usuario";
             // 
@@ -126,30 +126,33 @@
             this.LFPF.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFPF.Location = new System.Drawing.Point(96, 58);
             this.LFPF.Name = "LFPF";
-            this.LFPF.Size = new System.Drawing.Size(101, 14);
+            this.LFPF.Size = new System.Drawing.Size(127, 18);
             this.LFPF.TabIndex = 15;
             this.LFPF.Text = "Filtro Por Fecha";
             // 
             // comboUsuarios
             // 
+            this.comboUsuarios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboUsuarios.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboUsuarios.FormattingEnabled = true;
             this.comboUsuarios.Location = new System.Drawing.Point(343, 100);
             this.comboUsuarios.Name = "comboUsuarios";
-            this.comboUsuarios.Size = new System.Drawing.Size(200, 21);
+            this.comboUsuarios.Size = new System.Drawing.Size(200, 25);
             this.comboUsuarios.TabIndex = 14;
+            this.comboUsuarios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloLetras_KeyPress);
             // 
             // DTPHasta
             // 
             this.DTPHasta.Location = new System.Drawing.Point(61, 122);
             this.DTPHasta.Name = "DTPHasta";
-            this.DTPHasta.Size = new System.Drawing.Size(200, 21);
+            this.DTPHasta.Size = new System.Drawing.Size(200, 24);
             this.DTPHasta.TabIndex = 13;
             // 
             // DTPDesde
             // 
             this.DTPDesde.Location = new System.Drawing.Point(61, 78);
             this.DTPDesde.Name = "DTPDesde";
-            this.DTPDesde.Size = new System.Drawing.Size(200, 21);
+            this.DTPDesde.Size = new System.Drawing.Size(200, 24);
             this.DTPDesde.TabIndex = 12;
             // 
             // LHasta
@@ -157,7 +160,7 @@
             this.LHasta.AutoSize = true;
             this.LHasta.Location = new System.Drawing.Point(19, 128);
             this.LHasta.Name = "LHasta";
-            this.LHasta.Size = new System.Drawing.Size(39, 13);
+            this.LHasta.Size = new System.Drawing.Size(47, 17);
             this.LHasta.TabIndex = 11;
             this.LHasta.Text = "Hasta:";
             // 
@@ -166,7 +169,7 @@
             this.LDesde.AutoSize = true;
             this.LDesde.Location = new System.Drawing.Point(19, 84);
             this.LDesde.Name = "LDesde";
-            this.LDesde.Size = new System.Drawing.Size(41, 13);
+            this.LDesde.Size = new System.Drawing.Size(51, 17);
             this.LDesde.TabIndex = 10;
             this.LDesde.Text = "Desde:";
             // 
@@ -186,13 +189,13 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(375, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 30);
+            this.label1.Size = new System.Drawing.Size(245, 37);
             this.label1.TabIndex = 20;
             this.label1.Text = "Control de Ventas";
             // 
             // FormPrincipalVentasSupervisor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 661);
             this.Controls.Add(this.label1);
