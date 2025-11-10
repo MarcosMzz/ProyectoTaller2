@@ -43,7 +43,7 @@
             this.DGVehiculos.AllowUserToAddRows = false;
             this.DGVehiculos.AllowUserToDeleteRows = false;
             this.DGVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVehiculos.Location = new System.Drawing.Point(0, 123);
+            this.DGVehiculos.Location = new System.Drawing.Point(12, 122);
             this.DGVehiculos.Name = "DGVehiculos";
             this.DGVehiculos.ReadOnly = true;
             this.DGVehiculos.RowHeadersWidth = 51;
@@ -52,7 +52,7 @@
             // 
             // BTNAgregarAuto
             // 
-            this.BTNAgregarAuto.Location = new System.Drawing.Point(198, 26);
+            this.BTNAgregarAuto.Location = new System.Drawing.Point(264, 29);
             this.BTNAgregarAuto.Name = "BTNAgregarAuto";
             this.BTNAgregarAuto.Size = new System.Drawing.Size(102, 62);
             this.BTNAgregarAuto.TabIndex = 6;
@@ -62,7 +62,7 @@
             // 
             // BTNModificarAuto
             // 
-            this.BTNModificarAuto.Location = new System.Drawing.Point(332, 26);
+            this.BTNModificarAuto.Location = new System.Drawing.Point(398, 29);
             this.BTNModificarAuto.Name = "BTNModificarAuto";
             this.BTNModificarAuto.Size = new System.Drawing.Size(102, 62);
             this.BTNModificarAuto.TabIndex = 7;
@@ -72,7 +72,7 @@
             // 
             // BTNDarDeBajaAuto
             // 
-            this.BTNDarDeBajaAuto.Location = new System.Drawing.Point(479, 26);
+            this.BTNDarDeBajaAuto.Location = new System.Drawing.Point(545, 29);
             this.BTNDarDeBajaAuto.Name = "BTNDarDeBajaAuto";
             this.BTNDarDeBajaAuto.Size = new System.Drawing.Size(102, 62);
             this.BTNDarDeBajaAuto.TabIndex = 8;
@@ -82,7 +82,7 @@
             // 
             // BTNActivarAuto
             // 
-            this.BTNActivarAuto.Location = new System.Drawing.Point(626, 26);
+            this.BTNActivarAuto.Location = new System.Drawing.Point(692, 29);
             this.BTNActivarAuto.Name = "BTNActivarAuto";
             this.BTNActivarAuto.Size = new System.Drawing.Size(102, 62);
             this.BTNActivarAuto.TabIndex = 9;
@@ -94,7 +94,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 26);
+            this.label1.Location = new System.Drawing.Point(93, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 30);
             this.label1.TabIndex = 10;
@@ -104,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 51);
+            this.label2.Location = new System.Drawing.Point(93, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 30);
             this.label2.TabIndex = 11;
@@ -114,8 +114,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(954, 681);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(966, 681);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTNActivarAuto);

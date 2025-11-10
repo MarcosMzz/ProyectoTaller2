@@ -40,59 +40,61 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MSClientes,
             this.MSVehiculos,
             this.MSVentas,
             this.MSUsuarios,
-            this.cerrarSesionToolStripMenuItem,
-            this.MSBackup});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 657);
+            this.MSBackup,
+            this.cerrarSesionToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(1);
+            this.menuStrip1.Size = new System.Drawing.Size(118, 681);
             this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "menu";
             // 
             // MSClientes
             // 
             this.MSClientes.Name = "MSClientes";
-            this.MSClientes.Size = new System.Drawing.Size(61, 20);
+            this.MSClientes.Size = new System.Drawing.Size(117, 25);
             this.MSClientes.Text = "Clientes";
             this.MSClientes.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // MSVehiculos
             // 
             this.MSVehiculos.Name = "MSVehiculos";
-            this.MSVehiculos.Size = new System.Drawing.Size(69, 20);
+            this.MSVehiculos.Size = new System.Drawing.Size(117, 25);
             this.MSVehiculos.Text = "Vehiculos";
             this.MSVehiculos.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             // 
             // MSVentas
             // 
             this.MSVentas.Name = "MSVentas";
-            this.MSVentas.Size = new System.Drawing.Size(53, 20);
+            this.MSVentas.Size = new System.Drawing.Size(117, 25);
             this.MSVentas.Text = "Ventas";
             this.MSVentas.Click += new System.EventHandler(this.abrirVentas);
             // 
             // MSUsuarios
             // 
             this.MSUsuarios.Name = "MSUsuarios";
-            this.MSUsuarios.Size = new System.Drawing.Size(64, 20);
+            this.MSUsuarios.Size = new System.Drawing.Size(117, 25);
             this.MSUsuarios.Text = "Usuarios";
             this.MSUsuarios.Click += new System.EventHandler(this.abrirUsuarios);
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(117, 25);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.CerrarSesion);
             // 
             // MSBackup
             // 
             this.MSBackup.Name = "MSBackup";
-            this.MSBackup.Size = new System.Drawing.Size(93, 20);
+            this.MSBackup.Size = new System.Drawing.Size(117, 25);
             this.MSBackup.Text = "Hacer BackUp";
             this.MSBackup.Visible = false;
             this.MSBackup.Click += new System.EventHandler(this.abrirFormBackUp);
@@ -101,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 681);
+            this.ClientSize = new System.Drawing.Size(1084, 681);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

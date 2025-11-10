@@ -86,19 +86,19 @@
             this.DGClientes.AllowUserToDeleteRows = false;
             this.DGClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DGClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGClientes.Location = new System.Drawing.Point(0, 99);
-            this.DGClientes.MaximumSize = new System.Drawing.Size(948, 571);
+            this.DGClientes.Location = new System.Drawing.Point(12, 113);
+            this.DGClientes.MaximumSize = new System.Drawing.Size(950, 571);
             this.DGClientes.Name = "DGClientes";
             this.DGClientes.ReadOnly = true;
             this.DGClientes.RowHeadersWidth = 51;
-            this.DGClientes.Size = new System.Drawing.Size(948, 571);
+            this.DGClientes.Size = new System.Drawing.Size(950, 557);
             this.DGClientes.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 13);
+            this.label1.Location = new System.Drawing.Point(64, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 30);
             this.label1.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 51);
+            this.label2.Location = new System.Drawing.Point(64, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 30);
             this.label2.TabIndex = 7;
@@ -121,7 +121,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(262, 10);
+            this.panel1.Location = new System.Drawing.Point(265, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 83);
             this.panel1.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 661);
+            this.ClientSize = new System.Drawing.Size(964, 661);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

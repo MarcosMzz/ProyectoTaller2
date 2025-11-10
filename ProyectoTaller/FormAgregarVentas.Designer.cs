@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, -1);
+            this.label1.Location = new System.Drawing.Point(4, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 0;
@@ -94,29 +94,29 @@
             this.PanelProducto.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelProducto.Location = new System.Drawing.Point(8, 25);
             this.PanelProducto.Name = "PanelProducto";
-            this.PanelProducto.Size = new System.Drawing.Size(389, 180);
+            this.PanelProducto.Size = new System.Drawing.Size(377, 180);
             this.PanelProducto.TabIndex = 2;
             // 
             // NUDCantidad
             // 
-            this.NUDCantidad.Location = new System.Drawing.Point(283, 109);
+            this.NUDCantidad.Location = new System.Drawing.Point(283, 96);
             this.NUDCantidad.Name = "NUDCantidad";
             this.NUDCantidad.Size = new System.Drawing.Size(82, 27);
             this.NUDCantidad.TabIndex = 12;
             // 
             // BTNLimpiar
             // 
-            this.BTNLimpiar.Location = new System.Drawing.Point(283, 147);
+            this.BTNLimpiar.Location = new System.Drawing.Point(274, 142);
             this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(91, 27);
+            this.BTNLimpiar.Size = new System.Drawing.Size(91, 35);
             this.BTNLimpiar.TabIndex = 5;
-            this.BTNLimpiar.Text = "Limpar";
+            this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = true;
             this.BTNLimpiar.Click += new System.EventHandler(this.limparDatosVehiculo);
             // 
             // BTNAgregarProducto
             // 
-            this.BTNAgregarProducto.Location = new System.Drawing.Point(8, 145);
+            this.BTNAgregarProducto.Location = new System.Drawing.Point(8, 142);
             this.BTNAgregarProducto.Name = "BTNAgregarProducto";
             this.BTNAgregarProducto.Size = new System.Drawing.Size(86, 35);
             this.BTNAgregarProducto.TabIndex = 4;
@@ -126,7 +126,7 @@
             // 
             // TBPrecio
             // 
-            this.TBPrecio.Location = new System.Drawing.Point(9, 109);
+            this.TBPrecio.Location = new System.Drawing.Point(9, 96);
             this.TBPrecio.Name = "TBPrecio";
             this.TBPrecio.ReadOnly = true;
             this.TBPrecio.Size = new System.Drawing.Size(245, 27);
@@ -135,7 +135,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(283, 75);
+            this.label10.Location = new System.Drawing.Point(283, 74);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 19);
             this.label10.TabIndex = 11;
@@ -144,7 +144,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 75);
+            this.label9.Location = new System.Drawing.Point(5, 74);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 19);
             this.label9.TabIndex = 10;
@@ -155,7 +155,7 @@
             this.CBAuto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CBAuto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBAuto.FormattingEnabled = true;
-            this.CBAuto.Location = new System.Drawing.Point(5, 38);
+            this.CBAuto.Location = new System.Drawing.Point(9, 31);
             this.CBAuto.Name = "CBAuto";
             this.CBAuto.Size = new System.Drawing.Size(360, 27);
             this.CBAuto.TabIndex = 9;
@@ -205,7 +205,7 @@
             // 
             // TBEmail
             // 
-            this.TBEmail.Location = new System.Drawing.Point(238, 38);
+            this.TBEmail.Location = new System.Drawing.Point(238, 31);
             this.TBEmail.Name = "TBEmail";
             this.TBEmail.ReadOnly = true;
             this.TBEmail.Size = new System.Drawing.Size(274, 27);
@@ -213,7 +213,7 @@
             // 
             // TBApellido
             // 
-            this.TBApellido.Location = new System.Drawing.Point(238, 109);
+            this.TBApellido.Location = new System.Drawing.Point(238, 97);
             this.TBApellido.Name = "TBApellido";
             this.TBApellido.ReadOnly = true;
             this.TBApellido.Size = new System.Drawing.Size(165, 27);
@@ -221,7 +221,7 @@
             // 
             // TBNombre
             // 
-            this.TBNombre.Location = new System.Drawing.Point(4, 109);
+            this.TBNombre.Location = new System.Drawing.Point(14, 97);
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.ReadOnly = true;
             this.TBNombre.Size = new System.Drawing.Size(172, 27);
@@ -248,7 +248,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 74);
+            this.label5.Location = new System.Drawing.Point(10, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 3;
@@ -257,7 +257,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 9);
+            this.label4.Location = new System.Drawing.Point(10, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 19);
             this.label4.TabIndex = 2;
@@ -268,7 +268,7 @@
             this.CBDni.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CBDni.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBDni.FormattingEnabled = true;
-            this.CBDni.Location = new System.Drawing.Point(0, 38);
+            this.CBDni.Location = new System.Drawing.Point(14, 31);
             this.CBDni.Name = "CBDni";
             this.CBDni.Size = new System.Drawing.Size(121, 27);
             this.CBDni.TabIndex = 1;
@@ -278,10 +278,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(403, -1);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(405, -1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 23);
+            this.label2.Size = new System.Drawing.Size(77, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente";
             // 
@@ -301,7 +301,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 3);
+            this.label11.Location = new System.Drawing.Point(10, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 23);
             this.label11.TabIndex = 5;
@@ -350,9 +350,9 @@
             this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(503, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 52);
+            this.button1.Size = new System.Drawing.Size(102, 54);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Elimnar Producto";
+            this.button1.Text = "Eliminar Producto";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BTNEliminarProducto_Click);
             // 
@@ -376,9 +376,9 @@
             // 
             // BTNCancelarVenta
             // 
-            this.BTNCancelarVenta.Location = new System.Drawing.Point(758, 3);
+            this.BTNCancelarVenta.Location = new System.Drawing.Point(752, 3);
             this.BTNCancelarVenta.Name = "BTNCancelarVenta";
-            this.BTNCancelarVenta.Size = new System.Drawing.Size(89, 54);
+            this.BTNCancelarVenta.Size = new System.Drawing.Size(95, 54);
             this.BTNCancelarVenta.TabIndex = 3;
             this.BTNCancelarVenta.Text = "Cancelar Venta";
             this.BTNCancelarVenta.UseVisualStyleBackColor = true;
@@ -386,9 +386,9 @@
             // 
             // BTNFinalizarVenta
             // 
-            this.BTNFinalizarVenta.Location = new System.Drawing.Point(637, 3);
+            this.BTNFinalizarVenta.Location = new System.Drawing.Point(628, 3);
             this.BTNFinalizarVenta.Name = "BTNFinalizarVenta";
-            this.BTNFinalizarVenta.Size = new System.Drawing.Size(89, 54);
+            this.BTNFinalizarVenta.Size = new System.Drawing.Size(103, 54);
             this.BTNFinalizarVenta.TabIndex = 2;
             this.BTNFinalizarVenta.Text = "Finalizar Venta";
             this.BTNFinalizarVenta.UseVisualStyleBackColor = true;
