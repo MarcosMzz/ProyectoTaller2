@@ -21,11 +21,14 @@ namespace ProyectoTaller
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             refrescarForm();
+
             
         }
 
         private void refrescarForm()
         {
+            ActualizarInfoUsuarioLabels();
+
             this.Text = $"Bienvenido {Sesion.Nombre} {Sesion.Apellido} - Rol: {Sesion.Rol}";
 
             MSBackup.Visible = false;
@@ -149,6 +152,26 @@ namespace ProyectoTaller
         private void abrirFormBackUp(object sender, EventArgs e)
         {
             abrirForm(new FormBackUpDB());
+        }
+
+        private void ActualizarInfoUsuarioLabels()
+        {
+            // Verificamos si hay una sesión activa para mostrar los datos
+            if (Sesion.LoginExitoso)
+            {
+                // Concatenamos Nombre y Apellido
+                LBNombre.Text = Sesion.Nombre;
+                LBApellido.Text = Sesion.Apellido;
+
+                // Asignamos el Rol
+                LBRol.Text = Sesion.Rol;
+            }
+            else
+            {
+                // Caso de emergencia, si no hay sesión
+                LBNombre.Text = "Invitado";
+                LBRol.Text = "Sin Rol";
+            }
         }
     }
 }
