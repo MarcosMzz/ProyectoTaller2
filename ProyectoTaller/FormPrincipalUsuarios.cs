@@ -68,53 +68,112 @@ namespace ProyectoTaller
             if (DGUusarios.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(DGUusarios.SelectedRows[0].Cells["ID_Usuario"].Value);
+                string nombre = Convert.ToString(DGUusarios.SelectedRows[0].Cells["Nombre"].Value);
 
+                //Evitar que el usuario logueado se modifique a sí mismo
+                if (id == Sesion.UsuarioId)
+                {
+                    MessageBox.Show("No puedes modificar tus propios datos desde este menú.",
+                                    "Acción no permitida",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                //Evitar que un admin modifique a otro admin
+                string perfil = Convert.ToString(DGUusarios.SelectedRows[0].Cells["Perfil"].Value);
+                if (Sesion.Rol == "Administrador" && perfil == "Administrador")
+                {
+                    MessageBox.Show($"No puedes modificar a otro administrador ({nombre}).",
+                                    "Acción no permitida",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+                //Si pasa las validaciones, abre el formulario normalmente
                 FormModificarUsuario formModif = new FormModificarUsuario(this, id);
                 formModif.Show();
             }
             else
             {
-                MessageBox.Show("Debe seleccionar UN cliente para modificar");
+                MessageBox.Show("Debe seleccionar UN usuario para modificar.",
+                                "Atención",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
             }
         }
+
         private void DarDeBajaUsuarios(object sender, EventArgs e)
         {
             if (DGUusarios.SelectedRows.Count >= 1)
             {
                 foreach (DataGridViewRow fila in DGUusarios.SelectedRows)
                 {
-                    if (Convert.ToString(fila.Cells["Estado"].Value) == "Desactivado")
+                    int id = Convert.ToInt32(fila.Cells["ID_Usuario"].Value);
+                    string nombre = Convert.ToString(fila.Cells["Nombre"].Value);
+                    string estado = Convert.ToString(fila.Cells["Estado"].Value);
+                    string perfil = Convert.ToString(fila.Cells["Perfil"].Value); // ← viene de tu consulta SQL
+
+                    // 🚫 1. Evitar que el admin se dé de baja a sí mismo
+                    if (id == Sesion.UsuarioId)
                     {
-                        MessageBox.Show("El usuario " + Convert.ToString(fila.Cells[1].Value) + " ya habia sido dado de baja");
+                        MessageBox.Show("No puedes darte de baja a ti mismo.",
+                                        "Acción no permitida",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                        continue;
                     }
-                    else
+
+                    // 🚫 2. Evitar que un admin dé de baja a otro admin
+                    if (Sesion.Rol == "Administrador" && perfil == "Administrador")
                     {
-                        int id = Convert.ToInt32(fila.Cells[0].Value);
+                        MessageBox.Show($"No puedes dar de baja a otro administrador ({nombre}).",
+                                        "Acción no permitida",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                        continue;
+                    }
 
-                        using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+                    // ⚠️ 3. Verificar si ya está desactivado
+                    if (estado == "Desactivado")
+                    {
+                        MessageBox.Show($"El usuario {nombre} ya había sido dado de baja.",
+                                        "Información",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                        continue;
+                    }
+
+                    // ✅ 4. Actualizar el estado en la base de datos
+                    using (SqlConnection conn = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Concesionaria;Integrated Security=True"))
+                    {
+                        conn.Open();
+
+                        string query = @"UPDATE Usuarios 
+                                 SET Baja = 0
+                                 WHERE ID_Usuario = @Id";
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            conn.Open();
-
-                            string query = @"UPDATE Usuarios 
-                                          SET Baja = 0
-                                         WHERE ID_Usuario = @Id";
-
-                            using (SqlCommand cmd = new SqlCommand(query, conn))
-                            {
-                                cmd.Parameters.AddWithValue("@Id", id);
-
-                                cmd.ExecuteNonQuery();
-                            }
+                            cmd.Parameters.AddWithValue("@Id", id);
+                            cmd.ExecuteNonQuery();
                         }
                     }
                 }
+
+                // 🔄 Recargar la grilla para reflejar los cambios
                 this.CargarUsuarios();
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente para dar de baja");
+                MessageBox.Show("Debe seleccionar un usuario para dar de baja.",
+                                "Atención",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
             }
         }
+
 
         private void DarDeAltaUsuarios(object sender, EventArgs e)
         {
