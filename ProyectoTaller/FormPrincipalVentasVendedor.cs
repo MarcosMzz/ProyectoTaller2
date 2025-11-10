@@ -19,6 +19,12 @@ namespace ProyectoTaller
         public FormPrincipalVentasVendedor()
         {
             InitializeComponent();
+            this.cargarDTP();
+        }
+
+        private void cargarDTP()
+        {
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void CargarVentasVendedor()
@@ -43,7 +49,12 @@ namespace ProyectoTaller
                                     INNER JOIN Vehiculos ve ON dv.ID_Auto = ve.ID_Auto
                                     INNER JOIN Usuarios u ON v.ID_Usuario = u.ID_Usuario
                                     INNER JOIN Cliente c ON v.ID_Cliente = c.ID_Cliente
-                                    WHERE v.ID_Usuario = @UsuarioId"; 
+                                    WHERE v.ID_Usuario = @UsuarioId";
+
+                    DateTime fechaDesde = dateTimePicker1.Value.Date;
+                    DateTime fechaHasta = dateTimePicker1.Value.Date.AddDays(1);
+
+                    query += " AND " + $"v.FechaVenta BETWEEN '{fechaDesde:yyyy-MM-dd}' AND '{fechaHasta:yyyy-MM-dd}'";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
